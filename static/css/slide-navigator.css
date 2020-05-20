@@ -1,0 +1,4 @@
+#slide-navigator {
+  position: absolute;
+  z-index: 2;
+}

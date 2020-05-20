@@ -1,0 +1,52 @@
+body {
+  background-color: rgb(73, 73, 73);
+  scroll-behavior: smooth;
+  font-family: 'Lato', sans-serif;
+}
+
+.slide {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.slide-content-container {
+  padding-left: 180px;
+  padding-right: 180px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.description {
+  font-size: 16px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(31, 31, 31); 
+  border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+  .slide-content-container {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+
+@media (max-width: 520px) {
+  .slide-content-container {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}

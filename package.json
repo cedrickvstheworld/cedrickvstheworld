@@ -1,0 +1,20 @@
+{
+  "name": "cedrickvstheworld2.0",
+  "version": "1.0.0",
+  "description": "badass",
+  "main": "index.js",
+  "scripts": {
+    "start": "next start",
+    "dev": "next dev",
+    "build": "next build"
+  },
+  "author": "cedrickvstheworld",
+  "license": "ISC",
+  "dependencies": {
+    "animate.css": "^4.1.0",
+    "next": "^9.4.0",
+    "react": "^16.13.1",
+    "react-awesome-slider": "^4.1.0",
+    "react-dom": "^16.13.1"
+  }
+}

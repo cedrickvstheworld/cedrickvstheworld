@@ -1,0 +1,188 @@
+.page-two {
+  background-color: #fafafa;
+}
+
+#page-two-wrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+}
+
+.project-card-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.project-card {
+  background-color: rgb(119, 119, 119);
+  width: 100%;
+  height: 300px;
+  box-shadow: 8px 12px 14px rgba(26, 26, 26, 0.466);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.left-card {
+  padding-right: 20px !important;
+}
+
+.right-card {
+  padding-left: 20px !important;
+}
+
+.title-bar {
+  width: 100%;
+  height: 30px;
+  background-color: #494949;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.close, .minimize, .maximize {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  top: 7px;
+}
+
+.close {
+  right: 10px;
+}
+
+.minimize {
+  right: 35px;
+}
+
+.maximize {
+  right: 60px;
+}
+
+/* image containers */
+.window-workspace-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.project-card-image-container {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: block;
+}
+
+.project-card-image-overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.632);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .3s ease;
+  display: grid;
+  text-align: justify;
+}
+
+.overlay-desc {
+  line-height: 1.55 !important;
+}
+
+.project-overlay-container {
+  display: none;
+  height: 100%;
+}
+
+.overlay-desc-container {
+  padding-top: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  height: 100%;
+}
+
+.window-workspace-wrapper:hover .project-card-image-overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.window-workspace-wrapper:hover .project-overlay-container {
+  display: block;
+}
+
+.project-read-more {
+  display: grid;
+  width: 100%;
+  justify-items: center;
+  bottom: 47px;
+  position: absolute;
+}
+
+
+#project-card-image-container-0 {
+  background-image: url('https://images.pexels.com/photos/4273439/pexels-photo-4273439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+}
+
+#project-card-image-container-1 {
+  background-image: url('https://images.pexels.com/photos/4348226/pexels-photo-4348226.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+}
+
+#project-card-image-container-2 {
+  background-image: url('https://images.pexels.com/photos/3689772/pexels-photo-3689772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+}
+
+#project-card-image-container-3 {
+  background-image: url('https://images.pexels.com/photos/1713953/pexels-photo-1713953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+}
+
+@media (max-width: 1200px) {
+  .left-card {
+    padding-right: 10px !important;
+  }
+
+  .right-card {
+    padding-left: 10px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-card {
+    height: 280px;
+  }
+
+  .title-bar {
+    justify-items: start;
+  }
+
+  .overlay-desc-container {
+    padding: 18px;
+  }
+
+  .close, .minimize, .maximize {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    top: 7px;
+  }
+  
+  .close {
+    right: 8px;
+  }
+  
+  .minimize {
+    right: 28px;
+  }
+  
+  .maximize {
+    right: 48px;
+  }
+
+}

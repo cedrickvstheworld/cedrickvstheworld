@@ -1,0 +1,1 @@
+{"ast":null,"code":"import AwesomeSlider from \"react-awesome-slider\";\nimport { withNavigationHandlers } from \"react-awesome-slider/dist/navigation\"; // Wrapp the AwesomeSlider component with the navigationHandlers\n\nexport var NavigationSlider = withNavigationHandlers(AwesomeSlider);","map":null,"metadata":{},"sourceType":"module"}
