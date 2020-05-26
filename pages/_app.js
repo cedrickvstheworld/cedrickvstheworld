@@ -4,7 +4,7 @@ import Nav from "../components/header";
 
 // Styles
 import '../static/css/font-lato.css';
-import '../static/css/fontawesome/css/all.min.css';
+// import '../static/css/fontawesome/css/all.min.css';
 import '../static/css/main.css';
 import 'animate.css';
 import '../static/css/materialize-css-grid.min.css';
