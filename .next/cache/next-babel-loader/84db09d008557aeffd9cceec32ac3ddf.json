@@ -1,1 +1,0 @@
-{"ast":null,"code":"var __jsx = React.createElement;\nimport React from 'react';\nimport Slider from '../components/slider'; // Wrapp the aplication with the navigation Provider passing down the current page slug.\n\nvar Home = function Home() {\n  return __jsx(Slider, null);\n};\n\nexport default Home;","map":null,"metadata":{},"sourceType":"module"}
