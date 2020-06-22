@@ -1,5 +1,5 @@
 import React from 'react';
-import {PROJECT_CARD_CONTENTS} from '../../contents/project';
+import {PROJECT_CARD_CONTENTS, PROJECT_INFO} from '../../contents/project';
 import ProjectViewer from '../partials/project-viewer';
 import Footer from '../partials/footer';
 import {navigationButtons} from '../../static/js/helpers';
@@ -8,10 +8,7 @@ import {navigationButtons} from '../../static/js/helpers';
 export default class PageTwo extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      a: "test"
-    };
-    this.viewProject = this.viewProject.bind(this);
+    this.state = PROJECT_INFO[0];
   }
 
   componentDidMount() {
@@ -45,7 +42,7 @@ export default class PageTwo extends React.Component {
                   <h6 className="grey-text text-lighten-4 overlay-desc">{data.description}</h6>
                 </div>
                 <div className="project-read-more">
-                  <h6 className="animate__animated animate__headShake  animate__delay-3s light-blue-text clickable" onClick={this.viewProject}>LEARN MORE</h6>
+                  <h6 className="animate__animated animate__headShake  animate__delay-3s light-blue-text clickable" onClick={this.viewProject.bind(this, PROJECT_INFO[data._id])}>LEARN MORE</h6>
                 </div>
               </div>
             </div>
@@ -55,9 +52,9 @@ export default class PageTwo extends React.Component {
     )
   }
 
-  async viewProject() {
-    await this.setState({a: "fucker"});
-    document.getElementById("project-viewer").style.display = 'grid';
+  async viewProject(projectInfo) {
+    await this.setState(projectInfo);
+    document.getElementById("project-viewer").style.display = 'block';
     this.navButtons.hide();
   }
 

@@ -24,3 +24,29 @@ export const PROJECT_CARD_CONTENTS = [
     link: ''
   }
 ]
+
+
+export const PROJECT_INFO = [
+  {
+    _id: 0,
+    title: 'SAMPLE_TITLE',
+    healthText: 'Ipsum ea ut anim cillum.',
+    type: 'Corporate Project',
+    previews: [],
+    description: 'Lorem pariatur non ea nulla amet eu consectetur. Minim enim reprehen%derit eiusmod ex esse consectetur irure tempor. Esse sint voluptate do Lorem quis officia elit irure dolore id velit irure sint amet. Qui eu ipsum occaecat consequat nulla qui. Est nostrud sit adipisicing irure occaecat voluptate deserunt veniam. Nulla ex amet ut mollit elit voluptate pariatur.',
+    tools: ['Python', 'Typescript', 'Docker'],
+    repository: 'https://github.com',
+    websiteLink: 'https://test-link.com'
+  },
+  {
+    _id: 1,
+    title: 'SAMPLE_TITLE_1',
+    healthText: 'Ipsum ea ut anim cillum.',
+    type: 'Corporate Project',
+    previews: ['test', 'shit', 'images'],
+    description: 'Lorem pariatur non ea nulla amet eu consectetur. Minim enim reprehenderit eiusmod ex esse consectetur irure tempor. Esse sint voluptate do Lorem quis officia elit irure dolore id velit irure sint amet. Qui eu ipsum occaecat consequat nulla qui. Est nostrud sit adipisicing irure occaecat voluptate deserunt veniam. Nulla ex amet ut mollit elit voluptate pariatur.',
+    tools: ['Python', 'Typescript', 'Docker'],
+    repository: 'https://github.com',
+    websiteLink: 'https://test-link.com'
+  }
+]
