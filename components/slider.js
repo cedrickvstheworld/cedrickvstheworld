@@ -1,14 +1,22 @@
-import {NavigationSlider} from './navigation-slider';
+import AwesomeSlider from "react-awesome-slider";
+import {
+  withNavigationHandlers,
+  withNavigationContext
+} from "react-awesome-slider/dist/navigation";
 
 // Slides/Pages
 import PageOne from './slides/page-one';
 import PageTwo from './slides/page-two';
 import PageThree from './slides/page-three';
 
-// Create an AwesomeSlider instance with some content
-const Slider = () => {
+
+export const Slider = withNavigationHandlers(AwesomeSlider);
+
+export default withNavigationContext(() => {
   return (
-    <NavigationSlider
+    <Slider
+      // startupScreen={<div>Cool</div>}
+      // startupDelay={275}
       className="awesome-slider"
       animation="foldOutAnimation"
       media={[
@@ -20,7 +28,7 @@ const Slider = () => {
           children: <PageOne />
         },
         {
-          slug: "page-two",
+          slug: "portfolio",
           preload: [
             'https://images.pexels.com/photos/4273439/pexels-photo-4273439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
             'https://images.pexels.com/photos/4348226/pexels-photo-4348226.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -32,13 +40,11 @@ const Slider = () => {
         },
 
         {
-          slug: "page-three",
+          slug: "contact",
           className: "page-three slide",
           children: <PageThree />
         }
       ]}
     />
-   )
-}
-
-export default Slider;
+  );
+});

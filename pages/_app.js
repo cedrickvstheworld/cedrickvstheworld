@@ -1,6 +1,5 @@
 import { Provider } from "react-awesome-slider/dist/navigation";
 import { useRouter } from "next/router";
-import Nav from "../components/header";
 
 // Styles
 import '../static/css/font-lato.css';
@@ -14,6 +13,7 @@ import '../static/css/slides/page-one.css';
 import '../static/css/slides/page-two.css';
 import '../static/css/slides/page-three.css';
 import '../static/css/footer.css';
+import '../static/css/project-viewer.css';
 
 
 function App({ Component, pageProps }) {

@@ -1,12 +1,9 @@
-import React from 'react';
+import {withNavigationContext} from "react-awesome-slider/dist/navigation";
 
-export default class PageThree extends React.Component {
-  render() {
-    return (
-      <div id="page-three-wrapper" className="container grey-text text-lighten-3">
-        Officia occaecat commodo adipisicing eu proident.
-        
-      </div>
-    )
-  }
-}
+export default withNavigationContext(() => {
+  return (
+    <div id="page-three-wrapper" className="container grey-text text-lighten-3">
+      Officia occaecat commodo adipisicing eu proident.
+    </div>
+  );
+});

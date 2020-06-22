@@ -50,3 +50,7 @@ body {
     padding-bottom: 15px;
   }
 }
+
+.clickable {
+  cursor: pointer;
+}
