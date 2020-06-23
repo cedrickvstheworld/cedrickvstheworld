@@ -38,7 +38,6 @@ export default class ProjectViewer extends React.Component {
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     this.setState({projectData: nextProps.projectData})
     return false;  
   }
