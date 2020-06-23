@@ -10,6 +10,31 @@ export default class ProjectViewer extends React.Component {
     this.state = {
       projectData: props.projectData,
     };
+    this.hideFunCubesOnScroll = this.hideFunCubesOnScroll.bind(this);
+    this.pageY = 0
+  }
+
+  componentDidMount() {
+    if (window.innerWidth < 550) {
+      document.addEventListener(
+        'scroll',
+        this.hideFunCubesOnScroll,
+        true
+      );
+    }
+  }
+
+  hideFunCubesOnScroll() {
+    const funCubes = document.getElementById('fun-cubes-container')
+    const projectViewerPane = document.getElementById('project-viewer-container')
+    let y = projectViewerPane.getBoundingClientRect().y
+    if (y <= this.pageY) {
+      funCubes.style.display = 'none';
+    }
+    else {
+      funCubes.style.display = 'grid';
+    }
+    this.pageY = y;
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -25,17 +50,17 @@ export default class ProjectViewer extends React.Component {
     const tools = [];
     for (let i in project.tools) {
       tools.push(
-        <li className="description light-blue-text text-darken-3">{project.tools[i]}</li>
+        <li key={i} className="description light-blue-text text-darken-3">{project.tools[i]}</li>
       )
     }
     const webLink = project.websiteLink ? (
-      <a href="" class="waves-effect waves-light btn light-blue darken-3 web-link-btn">
+      <a href="" className="waves-effect waves-light btn light-blue darken-3 web-link-btn">
         <FontAwesomeIcon icon={faExternalLinkAlt} />&nbsp;
         Visit Website
       </a>
     ) : ''
     const webLinkAlt = project.websiteLink ? (
-      <a href="" class="light-blue-text text-darken-3 web-link-alt">
+      <a href="" className="light-blue-text text-darken-3 web-link-alt">
         <FontAwesomeIcon icon={faExternalLinkAlt} />&nbsp;
         Visit Website
       </a>
@@ -47,7 +72,7 @@ export default class ProjectViewer extends React.Component {
     ) : ''
 
     return (
-      <div className="animate__animated animate__slideInDown" id="project-viewer">
+      <div className="animate__animated animate__fadeInDown animate__faster" id="project-viewer">
         <div id="project-viewer-container" className="container">
           <div>
             <h4 id="project-viewer-heading" className="grey-text text-darken-3"><b>{project.title}</b></h4>
@@ -103,7 +128,6 @@ export default class ProjectViewer extends React.Component {
                 </li>
               </ul>
             </div>
-            <br />
             <div className="center center-align">
               <p className="grey-text text-darken-2">
                 <FontAwesomeIcon className="grey-text text-darken-2" icon={faGooglePlusG}/>

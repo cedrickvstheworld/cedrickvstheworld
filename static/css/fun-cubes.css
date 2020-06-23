@@ -1,0 +1,109 @@
+#fun-cubes-container {
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  left: 150px;
+  top: 50px;
+  z-index: 9;
+  display: none;
+  grid-template-areas:
+  "box0 box1 box2"
+  "box3 box4 box5"
+  "box6 box7 box8";
+  grid-gap: 2px;
+  cursor: pointer;
+  transition: 0.15s ease-in-out;
+}
+
+.fun-cube {
+  background-color: rgb(80, 80, 80);
+  border-radius: 5px;
+}
+
+#fun-cubes-container:hover {
+  grid-gap: 12px;
+  height: 100px;
+  width: 100px;
+  left: 135px;
+  top: 35px;
+}
+
+#box0 {
+  grid-area: box0;
+}
+#box1 {
+  grid-area: box1;
+}
+#box2 {
+  grid-area: box2;
+}
+#box3 {
+  grid-area: box3;
+}
+#box4 {
+  grid-area: box4;
+}
+#box5 {
+  grid-area: box5;
+}
+#box6 {
+  grid-area: box6;
+}
+#box7 {
+  grid-area: box7;
+}
+#box8 {
+  grid-area: box8;
+}
+
+@media (max-width: 1200px) {
+  #fun-cubes-container {
+    height: 60px;
+    width: 60px;
+    left: 40px;
+    top: 40px;
+  }
+  #fun-cubes-container:hover {
+    grid-gap: 7px;
+    height: 65px;
+    width: 65px;
+    left: 37px;
+    top: 37px;
+  }
+}
+
+@media (max-width: 1000px) {
+  #fun-cubes-container {
+    height: 50px;
+    width: 50px;
+    left: 30px;
+    top: 30px;
+  }
+  #fun-cubes-container:hover {
+    grid-gap: 5px;
+    height: 55px;
+    width: 55px;
+    left: 27px;
+    top: 27px;
+  }
+}
+
+@media (max-width: 550px) {
+  #fun-cubes-container {
+    height: 30px;
+    width: 30px;
+    left: 20px;
+    top: 20px;
+  }
+  .fun-cube {
+    background-color: rgb(80, 80, 80);
+    border-radius: 2px;
+  }
+  #fun-cubes-container:hover {
+    grid-gap: 3px;
+    height: 35px;
+    width: 35px;
+    left: 17px;
+    top: 17px;
+  }
+}

@@ -2,7 +2,8 @@ import React from 'react';
 import {PROJECT_CARD_CONTENTS, PROJECT_INFO} from '../../contents/project';
 import ProjectViewer from '../partials/project-viewer';
 import Footer from '../partials/footer';
-import {navigationButtons} from '../../static/js/helpers';
+import FunCubes from '../partials/fun-cubes';
+import {navigationButtons, funCubes} from '../../static/js/helpers';
 
 
 export default class PageTwo extends React.Component {
@@ -13,6 +14,7 @@ export default class PageTwo extends React.Component {
 
   componentDidMount() {
     this.navButtons = new navigationButtons(document);
+    this.viewProjectNav = new funCubes(document);
   }
 
    mapProject(data, index) {
@@ -54,8 +56,11 @@ export default class PageTwo extends React.Component {
 
   async viewProject(projectInfo) {
     await this.setState(projectInfo);
-    document.getElementById("project-viewer").style.display = 'block';
+    const projectViewer = document.getElementById("project-viewer")
+    projectViewer.style.display = 'block';
+    projectViewer.scrollTop = 0;
     this.navButtons.hide();
+    this.viewProjectNav.show();
   }
 
   render() {
@@ -70,6 +75,7 @@ export default class PageTwo extends React.Component {
         <ProjectViewer projectData={this.state}/>
         <div id="page-two-wrapper" className="container grey-text text-darken-3">
           <div className="slide-content-container">
+            <FunCubes />
             <div>
               <h4><b>Portfolio</b></h4>
               <p >Adipisicing aliqua irure excepteur ea in do. Cillum fugiat consequat sint deserunt non officia aliquip est quis aute dolore. Nisi dolor ut aute nostrud tempor incididunt officia ut anim ipsum minim irure veniam non.</p>
