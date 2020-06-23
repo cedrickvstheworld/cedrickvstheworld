@@ -2,23 +2,181 @@
   position: absolute;
   z-index: 3;
   display: none;
+  width: 100vw;
   height: 100vh;
-  width: 100%;
-  background-color: rgba(245, 245, 245, 0.976);
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: rgba(245, 245, 245, 0.965);
 }
 
 #project-viewer-container {
-  height: 100%;
-  width: 100%;
-  display: block;
   padding-left: 180px;
   padding-right: 180px;
   padding-top: 60px;
-  padding-bottom: 130px;
+  padding-bottom: 100px;
+}
+
+.image-preview-window {
+  width: 100%;
+  height: auto;
+  box-shadow: 8px 12px 14px rgba(26, 26, 26, 0.466);
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 80px;
+  background-color: rgb(51, 51, 51);
+}
+
+.image-preview-title-bar {
+  margin: 0 !important;
+  width: 100%;
+  height: 40px;
+  background-color: #494949;
+}
+
+.p-close, .p-minimize, .p-maximize {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 9.5px;
+}
+
+.p-close {
+  right: 12px;
+}
+
+.p-minimize {
+  right: 40px;
+}
+
+.p-maximize {
+  right: 68px;
+}
+
+
+#project-viewer-heading {
+  margin-bottom: 0 !important;
+}
+
+#project-description-container {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+#technical-section-container {
+  margin-bottom: 40px;
+}
+
+#tools-list li::before {
+  content: "\2022";
+  display: inline-block;
+  width: 1em;
+}
+
+#remote-repository-container {
+  margin-bottom: 45px;
+}
+
+.web-link-alt {
+  display: none;
 }
 
 .image-preview-container {
   height: 600px;
   width: 100%;
-  margin-bottom: 60px;
+}
+
+.footer-external-links-container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.footer-external-links-list {
+  list-style-type: none;
+}
+
+.footer-external-links-list li {
+  float: left;
+}
+
+.external-links-wrapper {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+@media (max-width: 1400px) {
+  #project-viewer-container {
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .image-preview-container {
+    height: 450px;
+  }
+}
+
+@media (max-width: 900px) {
+  #project-viewer-container {
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .web-link-btn {
+    display: none;
+  }
+
+  .web-link-alt {
+    display: block;
+  }
+
+  .image-preview-container {
+    height: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .image-preview-title-bar {
+    height: 30px;
+  }
+  
+  .p-close, .p-minimize, .p-maximize {
+    width: 16px;
+    height: 16px;
+    top: 6px;
+  }
+  
+  .p-close {
+    right: 8px;
+  }
+  
+  .p-minimize {
+    right: 28px;
+  }
+  
+  .p-maximize {
+    right: 48px;
+  }
+
+}
+
+@media (max-width: 520px) {
+  #project-viewer-container {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .image-preview-container {
+    height: 200px;
+  }
 }

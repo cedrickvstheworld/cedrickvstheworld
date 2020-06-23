@@ -1,5 +1,8 @@
 import React from 'react';
 import Slider from './preview-slider';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faExternalLinkAlt} from '@fortawesome/free-solid-svg-icons';
+import {faGithub, faFacebookF, faGooglePlusG} from '@fortawesome/free-brands-svg-icons';
 
 export default class ProjectViewer extends React.Component {
   constructor(props) {
@@ -16,22 +19,98 @@ export default class ProjectViewer extends React.Component {
   }
 
   render() {
+
     const project = this.state.projectData;
+
+    const tools = [];
+    for (let i in project.tools) {
+      tools.push(
+        <li className="description light-blue-text text-darken-3">{project.tools[i]}</li>
+      )
+    }
+    const webLink = project.websiteLink ? (
+      <a href="" class="waves-effect waves-light btn light-blue darken-3 web-link-btn">
+        <FontAwesomeIcon icon={faExternalLinkAlt} />&nbsp;
+        Visit Website
+      </a>
+    ) : ''
+    const webLinkAlt = project.websiteLink ? (
+      <a href="" class="light-blue-text text-darken-3 web-link-alt">
+        <FontAwesomeIcon icon={faExternalLinkAlt} />&nbsp;
+        Visit Website
+      </a>
+    ) : ''
+    const repository = project.repository ? (
+      <div className="grey-text text-darken-3" id="remote-repository-container">
+        <h6 className="description"><b>Remote&nbsp;Repository:</b> <a href={project.repository}>{project.repository}</a></h6>
+      </div>
+    ) : ''
+
     return (
       <div className="animate__animated animate__slideInDown" id="project-viewer">
         <div id="project-viewer-container" className="container">
           <div>
-            <h4 id="test">{project.title}</h4>
-            <p>{project.healthText}</p>
+            <h4 id="project-viewer-heading" className="grey-text text-darken-3"><b>{project.title}</b></h4>
+            <div className="row no-margin">
+              <div className="col l6 m6 s12 no-margin">
+                <p className="little-text grey-text text-darken-2">{project.healthText}</p>
+                {webLinkAlt}
+              </div>
+              <div className="col l6 m6 s12 no-margin right-align">
+                {webLink}
+              </div>
+            </div>
           </div>
+
           <div>
-            <Slider previews={project.previews}/>
+            <div className="image-preview-window">
+              <div className="p-maximize green lighten-1">
+              </div>
+              <div className="p-minimize yellow lighten-1">
+              </div>
+              <div className="p-close red lighten-1">
+              </div>
+              {/* title bar */}
+              <div className="image-preview-title-bar">
+              </div>
+              <Slider previews={project.previews}/>
+            </div>
           </div>
-          <div>
-            <h6>{project.description}</h6>
+
+          <div id="project-description-container">
+            <h6 className="description grey-text text-darken-3"><p>{project.description}</p></h6>
           </div>
-          <div>
-            <h5>Tools and technologies I got involved in this project.</h5>
+          {repository}
+          <div className="grey-text text-darken-3" id="technical-section-container">
+            <h5><b>Tools, technologies, stacks (or whatever you may call them) I got involved in this project.</b></h5>
+            <div className="underline"></div>
+            <ul id="tools-list">
+              {tools}
+            </ul>
+          </div>
+          <div className="footer-external-links-container">
+            <div>
+              <ul className="footer-external-links-list">
+                <li className="external-links-wrapper">
+                  <a href="https://github.com/cedie712" rel="noopener noreferrer" target="_blank">
+                    <FontAwesomeIcon className="grey-text text-darken-1" icon={faGithub}  size="4x"/>
+                  </a>
+                </li>
+                <li className="external-links-wrapper">
+                  <a href="https://web.facebook.com/cedrick.domingo.75" rel="noopener noreferrer" target="_blank">
+                    <FontAwesomeIcon className="grey-text text-darken-1" icon={faFacebookF}  size="4x"/>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <br />
+            <div className="center center-align">
+              <p className="grey-text text-darken-2">
+                <FontAwesomeIcon className="grey-text text-darken-2" icon={faGooglePlusG}/>
+                &nbsp;cedrickdomingo048@gmail.com
+              </p>
+              <p className="grey-text text-darken-2">CEDRICK DOMINGO <span className="light-blue-text">©2020</span></p>
+            </div>
           </div>
         </div>
       </div>
