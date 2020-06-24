@@ -13,7 +13,7 @@
   padding-left: 180px;
   padding-right: 180px;
   padding-top: 60px;
-  padding-bottom: 100px;
+  padding-bottom: 30px;
 }
 
 .image-preview-window {
@@ -64,10 +64,6 @@
   text-align: justify;
 }
 
-#technical-section-container {
-  margin-bottom: 40px;
-}
-
 #tools-list li::before {
   content: "\2022";
   display: inline-block;
@@ -85,28 +81,6 @@
 .image-preview-container {
   height: 600px;
   width: 100%;
-}
-
-.footer-external-links-container {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-}
-
-.footer-external-links-list {
-  list-style-type: none;
-}
-
-.footer-external-links-list li {
-  float: left;
-}
-
-.external-links-wrapper {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  margin-right: 15px;
-  margin-left: 15px;
 }
 
 @media (max-width: 1400px) {
