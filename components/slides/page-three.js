@@ -1,10 +1,54 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faGithub, faFacebook, faGoogle, faSkype} from '@fortawesome/free-brands-svg-icons';
-import { github_profile, facebook_profile, skype_profile } from '../../contents/links';
+import {faPaperPlane} from '@fortawesome/free-solid-svg-icons';
+import {faGithub, faFacebook, faSkype} from '@fortawesome/free-brands-svg-icons';
+import {github_profile, facebook_profile, skype_profile} from '../../contents/links';
 import Footer from '../partials/footer';
+import {inputWarning} from '../../static/js/helpers';
 
 export default class Contact extends React.Component {
+  constructor() {
+      super();
+      this.state = {
+          name: '',
+          email: '',
+          message: '',
+      }
+      this.fetchFieldValue = this.fetchFieldValue.bind(this);
+      this.submit = this.submit.bind(this);
+  }
+
+  fetchFieldValue(event) {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  validateForm() {
+    const {name, email, message} = this.state;
+    const validEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const testEmail = validEmail.test(email)
+    if (!name || !message || !testEmail) {
+      if (!name) {
+        inputWarning(document.getElementById('name'));
+      }
+      if (!testEmail) {
+        inputWarning(document.getElementById('email'));
+      }
+      if (!message) {
+        inputWarning(document.getElementById('contact-text-area'));
+      }
+      return false;
+    }
+    return true;
+  }
+
+  submit() {
+    const testForm = this.validateForm();
+    if (!testForm) {
+      return false;
+    }
+    // using sendgrid to send email
+  }
+
   render() {
     return (
       <div id="contact-page-wrapper" className="container grey-text text-lighten-2">
@@ -19,14 +63,18 @@ export default class Contact extends React.Component {
                 
               </div>
               <div className="input-container">
-                <input className="contact-input" placeholder="Your Name"/>
-                <input className="contact-input" placeholder="Your Email"/>
-                <textarea className="contact-input" id="contact-text-area" placeholder="Message"></textarea>
+                <input className="contact-input" id="name" placeholder="Your Name"
+                name="name" onChange={this.fetchFieldValue} value={this.state.name}/>
+                <input className="contact-input" id="email" placeholder="Your Email"
+                name="email" onChange={this.fetchFieldValue} value={this.state.email}/>
+                <textarea className="contact-input" id="contact-text-area" placeholder="Message"
+                name="message" onChange={this.fetchFieldValue} value={this.state.message}></textarea>
               </div>
               <div className="contact-form-footer">
-                <a href="" className="waves-effect waves-light btn btn-large">
+                <button onClick={this.submit} className="waves-effect waves-light btn btn-large">
+                  <FontAwesomeIcon icon={faPaperPlane} />&nbsp;
                   Send
-                </a>
+                </button>
               </div>
             </section>
           </div>

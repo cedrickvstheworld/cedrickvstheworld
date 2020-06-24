@@ -23,13 +23,21 @@
   font-size: 1.2rem;
   background-color: whitesmoke;
   color: #161616;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: 3px;
+  transition: 0.2s ease;
+}
+
+.input-warning {
+  /* border-style: solid;
+  border-width: 4px;
+  border-color: #EED202; */
+  box-shadow: 0 0 0 3pt #EED202;
 }
 
 #contact-text-area {
-  height: 220px;
+  height: 200px;
   padding-top: 10px;
 }
 

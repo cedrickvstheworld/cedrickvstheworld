@@ -39,3 +39,11 @@ export class funCubes {
   }
 
 }
+
+export function inputWarning(input) {
+  input.classList.add('input-warning');
+  let clearWarning = setTimeout(() => {
+    input.classList.remove('input-warning');
+    clearTimeout(clearWarning);
+  }, 1100);
+}
