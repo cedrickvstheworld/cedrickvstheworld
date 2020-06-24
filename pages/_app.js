@@ -9,7 +9,7 @@ import '../static/css/materialize-css-grid.min.css';
 import '../static/css/materialize-css-buttons.min.css';
 import 'react-awesome-slider/dist/styles.css';
 import "react-awesome-slider/dist/custom-animations/fold-out-animation.css";
-import "react-awesome-slider/dist/custom-animations/fall-animation.css";
+import "react-awesome-slider/dist/custom-animations/open-animation.css";
 import '../static/css/slide-navigator.css';
 import '../static/css/slides/page-one.css';
 import '../static/css/slides/page-two.css';

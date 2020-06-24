@@ -1,5 +1,6 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faGithub, faFacebookF, faGoogle} from '@fortawesome/free-brands-svg-icons';
+import {faGithub, faFacebookF, faGoogle, faSkype} from '@fortawesome/free-brands-svg-icons';
+import { github_profile, facebook_profile, skype_profile } from '../../contents/links';
 
 export default function Footer() {
   return (
@@ -7,13 +8,18 @@ export default function Footer() {
       <div>
         <ul className="footer-external-links-list">
           <li className="external-links-wrapper">
-            <a href="https://github.com/cedie712" rel="noopener noreferrer" target="_blank">
-              <FontAwesomeIcon className="grey-text text-darken-1 footer-github-icon" icon={faGithub}  size="4x"/>
+            <a href={github_profile} rel="noopener noreferrer" target="_blank">
+              <FontAwesomeIcon className="grey-text text-darken-1 footer-github-icon" icon={faGithub}  size="3x"/>
             </a>
           </li>
           <li className="external-links-wrapper">
-            <a href="https://web.facebook.com/cedrick.domingo.75" rel="noopener noreferrer" target="_blank">
-              <FontAwesomeIcon className="grey-text text-darken-1 footer-fb-icon" icon={faFacebookF}  size="4x"/>
+            <a href={facebook_profile} rel="noopener noreferrer" target="_blank">
+              <FontAwesomeIcon className="grey-text text-darken-1 footer-fb-icon" icon={faFacebookF}  size="3x"/>
+            </a>
+          </li>
+          <li className="external-links-wrapper">
+            <a href={skype_profile} rel="noopener noreferrer" target="_blank">
+              <FontAwesomeIcon className="grey-text text-darken-1 footer-skype-icon" icon={faSkype}  size="3x"/>
             </a>
           </li>
         </ul>

@@ -54,7 +54,7 @@ export default class ProjectViewer extends React.Component {
       )
     }
     const webLink = project.websiteLink ? (
-      <a href="" className="waves-effect waves-light btn light-blue darken-3 web-link-btn">
+      <a href="" className="waves-effect waves-light btn web-link-btn">
         <FontAwesomeIcon icon={faExternalLinkAlt} />&nbsp;
         Visit Website
       </a>
@@ -67,7 +67,7 @@ export default class ProjectViewer extends React.Component {
     ) : ''
     const repository = project.repository ? (
       <div className="grey-text text-darken-3" id="remote-repository-container">
-        <h6 className="description"><b>Remote&nbsp;Repository:</b> <a href={project.repository}>{project.repository}</a></h6>
+        <h6 className="description"><b>Remote&nbsp;Repository:</b> <a className="light-blue-text text-darken-3" href={project.repository}>{project.repository}</a></h6>
       </div>
     ) : ''
 

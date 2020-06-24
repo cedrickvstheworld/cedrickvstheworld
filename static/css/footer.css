@@ -7,7 +7,7 @@
 
 .footer-external-links-list {
   list-style-type: none;
-  margin-bottom: 85px;
+  margin-bottom: 65px;
 }
 
 .footer-external-links-list li {
@@ -28,6 +28,10 @@
 
 .footer-github-icon:hover {
   color: #211F1F !important;
+}
+
+.footer-skype-icon:hover {
+  color: #00aff0 !important;
 }
 
 .gmail-line:hover .footer-google-icon{

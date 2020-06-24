@@ -78,3 +78,6 @@ body {
   margin: 0 !important;
 }
 
+textarea {
+  resize: none;
+}
