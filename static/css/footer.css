@@ -21,3 +21,15 @@
   margin-right: 15px;
   margin-left: 15px;
 }
+
+.footer-fb-icon:hover {
+  color: #3b5998 !important;
+}
+
+.footer-github-icon:hover {
+  color: #211F1F !important;
+}
+
+.gmail-line:hover .footer-google-icon{
+  color: #DE5246 !important;
+}

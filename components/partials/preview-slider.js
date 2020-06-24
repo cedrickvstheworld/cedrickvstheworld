@@ -1,7 +1,6 @@
 import AwesomeSlider from 'react-awesome-slider';
 
 const slider = (props) => {
-  console.log(props.previews)
   return (
     <AwesomeSlider
       // bullets={false}
