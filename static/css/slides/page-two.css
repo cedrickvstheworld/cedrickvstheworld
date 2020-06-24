@@ -90,6 +90,7 @@
   transition: .3s ease;
   display: grid;
   text-align: justify;
+  cursor: pointer;
 }
 
 .overlay-desc {

@@ -38,13 +38,14 @@ export default class PageTwo extends React.Component {
   
             </div>
             {/* image overlay */}
-            <div className="project-card-image-overlay">
+            <div onClick={this.viewProject.bind(this, PROJECT_INFO[data._id])} className="project-card-image-overlay">
               <div className="project-overlay-container">
                 <div className="animate__animated animate__bounceInDown overlay-desc-container">
                   <h6 className="grey-text text-lighten-4 overlay-desc">{data.description}</h6>
                 </div>
                 <div className="project-read-more">
-                  <h6 className="animate__animated animate__headShake  animate__delay-3s light-blue-text clickable" onClick={this.viewProject.bind(this, PROJECT_INFO[data._id])}>LEARN MORE</h6>
+                  <h6 className="animate__animated animate__headShake  animate__delay-3s light-blue-text clickable" 
+                  onClick={this.viewProject.bind(this, PROJECT_INFO[data._id])}><span className="tap-to">TAP TO </span><span className="click-to">CLICK TO </span>LEARN MORE</h6>
                 </div>
               </div>
             </div>

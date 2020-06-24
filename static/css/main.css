@@ -33,12 +33,23 @@ body {
   border-radius: 5px;
 }
 
+.tap-to {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .slide-content-container {
     padding-left: 100px;
     padding-right: 100px;
     padding-top: 25px;
     padding-bottom: 25px;
+  }
+  .tap-to {
+    display: inline;
+  }
+
+  .click-to {
+    display: none;
   }
 }
 
