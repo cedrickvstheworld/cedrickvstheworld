@@ -13,9 +13,35 @@ export default class Contact extends React.Component {
           name: '',
           email: '',
           message: '',
+          nameLabel: '',
+          emailLabel: '',
+          textareaLabel: ''
       }
       this.fetchFieldValue = this.fetchFieldValue.bind(this);
       this.submit = this.submit.bind(this);
+  }
+
+  componentDidMount() {
+    this.showLabels();
+  }
+
+  async showLabels() {
+    await new Promise(r => setTimeout(r, 400));
+    const name = 'Your Name';
+    const email = 'Your Email';
+    const textarea = 'write your message here. . .';
+    for (let i in [...Array(name.length).keys()]) {
+      await this.setState({nameLabel: this.state.nameLabel + name.charAt(parseInt(i))})
+      await new Promise(r => setTimeout(r, 40));
+    }
+    for (let i in [...Array(email.length).keys()]) {
+      await this.setState({emailLabel: this.state.emailLabel + email.charAt(parseInt(i))})
+      await new Promise(r => setTimeout(r, 40));
+    }
+    for (let i in [...Array(textarea.length).keys()]) {
+      await this.setState({textareaLabel: this.state.textareaLabel + textarea.charAt(parseInt(i))})
+      await new Promise(r => setTimeout(r, 40));
+    }
   }
 
   fetchFieldValue(event) {
@@ -63,11 +89,11 @@ export default class Contact extends React.Component {
                 
               </div>
               <div className="input-container">
-                <input className="contact-input" id="name" placeholder="Your Name"
+                <input className="contact-input" id="name" placeholder={this.state.nameLabel}
                 name="name" onChange={this.fetchFieldValue} value={this.state.name}/>
-                <input className="contact-input" id="email" placeholder="Your Email"
+                <input className="contact-input" id="email" placeholder={this.state.emailLabel}
                 name="email" onChange={this.fetchFieldValue} value={this.state.email}/>
-                <textarea className="contact-input" id="contact-text-area" placeholder="Message"
+                <textarea className="contact-input" id="contact-text-area" placeholder={this.state.textareaLabel}
                 name="message" onChange={this.fetchFieldValue} value={this.state.message}></textarea>
               </div>
               <div className="contact-form-footer">
