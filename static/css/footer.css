@@ -7,7 +7,7 @@
 
 .footer-external-links-list {
   list-style-type: none;
-  margin-bottom: 65px;
+  margin-bottom: 70px;
 }
 
 .footer-external-links-list li {
@@ -18,12 +18,16 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  margin-right: 15px;
-  margin-left: 15px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .footer-fb-icon:hover {
   color: #3b5998 !important;
+}
+
+.footer-linkedin-icon:hover {
+  color: #0e76a8 !important;
 }
 
 .footer-github-icon:hover {
@@ -36,4 +40,12 @@
 
 .gmail-line:hover .footer-google-icon{
   color: #DE5246 !important;
+}
+
+
+@media (max-width: 310px) {
+  .external-links-wrapper {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
 }

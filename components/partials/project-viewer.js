@@ -73,8 +73,8 @@ export default class ProjectViewer extends React.Component {
 
     return (
       <div className="animate__animated animate__fadeInDown animate__faster" id="project-viewer">
-        <div id="project-viewer-container" className="container">
-          <div>
+        <div id="project-viewer-container">
+          <div id="project-preview-heading-container">
             <h4 id="project-viewer-heading" className="grey-text text-darken-3"><b>{project.title}</b></h4>
             <div className="row no-margin">
               <div className="col l6 m6 s12 no-margin">

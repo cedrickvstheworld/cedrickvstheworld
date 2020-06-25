@@ -1,6 +1,6 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faGithub, faFacebookF, faGoogle, faSkype} from '@fortawesome/free-brands-svg-icons';
-import { github_profile, facebook_profile, skype_profile } from '../../contents/links';
+import {faGithub, faFacebookF, faGoogle, faSkype, faLinkedin} from '@fortawesome/free-brands-svg-icons';
+import { github_profile, facebook_profile, skype_profile, linked_in } from '../../contents/links';
 
 export default function Footer() {
   return (
@@ -10,6 +10,11 @@ export default function Footer() {
           <li className="external-links-wrapper">
             <a href={github_profile} rel="noopener noreferrer" target="_blank">
               <FontAwesomeIcon className="grey-text text-darken-1 footer-github-icon" icon={faGithub}  size="3x"/>
+            </a>
+          </li>
+          <li className="external-links-wrapper">
+            <a href={linked_in} rel="noopener noreferrer" target="_blank">
+              <FontAwesomeIcon className="grey-text text-darken-1 footer-linkedin-icon" icon={faLinkedin}  size="3x"/>
             </a>
           </li>
           <li className="external-links-wrapper">

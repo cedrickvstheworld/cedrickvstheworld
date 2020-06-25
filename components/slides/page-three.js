@@ -1,8 +1,8 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPaperPlane} from '@fortawesome/free-solid-svg-icons';
-import {faGithub, faFacebook, faSkype} from '@fortawesome/free-brands-svg-icons';
-import {github_profile, facebook_profile, skype_profile} from '../../contents/links';
+import {faGithub, faFacebook, faSkype, faLinkedin} from '@fortawesome/free-brands-svg-icons';
+import {github_profile, facebook_profile, skype_profile, linked_in} from '../../contents/links';
 import Footer from '../partials/footer';
 import {inputWarning} from '../../static/js/helpers';
 
@@ -87,13 +87,18 @@ export default class Contact extends React.Component {
                   </a>
                 </div>
                 <div className="contact-link-container">
+                  <a href={linked_in} rel="noopener noreferrer" target="_blank">
+                    <FontAwesomeIcon className="grey-text text-darken-1 contact-link" id="contact-link-1" icon={faLinkedin}  size="3x"/>
+                  </a>
+                </div>
+                <div className="contact-link-container">
                   <a href={facebook_profile} rel="noopener noreferrer" target="_blank">
-                    <FontAwesomeIcon className="grey-text text-darken-1 contact-link" id="contact-link-1" icon={faFacebook}  size="3x"/>
+                    <FontAwesomeIcon className="grey-text text-darken-1 contact-link" id="contact-link-2" icon={faFacebook}  size="3x"/>
                   </a>
                 </div>
                 <div className="contact-link-container">
                   <a href={skype_profile} rel="noopener noreferrer" target="_blank">
-                    <FontAwesomeIcon className="grey-text text-darken-1 contact-link" id="contact-link-2" icon={faSkype}  size="3x" />
+                    <FontAwesomeIcon className="grey-text text-darken-1 contact-link" id="contact-link-3" icon={faSkype}  size="3x" />
                   </a>
                 </div>
               </div>

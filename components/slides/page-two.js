@@ -77,13 +77,15 @@ export default class PageTwo extends React.Component {
         <div id="page-two-wrapper" className="container grey-text text-darken-3">
           <div className="slide-content-container">
             <FunCubes />
-            <div>
-              <h4><b>Portfolio</b></h4>
-              <p >Adipisicing aliqua irure excepteur ea in do. Cillum fugiat consequat sint deserunt non officia aliquip est quis aute dolore. Nisi dolor ut aute nostrud tempor incididunt officia ut anim ipsum minim irure veniam non.</p>
-            </div>
-            <div>
-              <p className="grey-text text-darken-1">Anim nostrud do irure dolore dolor nostrud quis. dolore dolor nostrud quis.</p>
-            </div>
+            <header className="portfolio-header">
+              <div>
+                <h4><b>Portfolio</b></h4>
+                <p className="description">Adipisicing aliqua irure excepteur ea in do. Cillum fugiat consequat sint deserunt non officia aliquip est quis aute dolore. Nisi dolor ut aute nostrud tempor incididunt officia ut anim ipsum minim irure veniam non.</p>
+              </div>
+              <div>
+                <p className="grey-text text-darken-1">Anim nostrud do irure dolore dolor nostrud quis. dolore dolor nostrud quis.</p>
+              </div>
+            </header>
             <div id="projects-container" className="row">
               {Projects}
             </div>

@@ -10,8 +10,8 @@
 }
 
 #project-viewer-container {
-  padding-left: 145px;
-  padding-right: 145px;
+  padding-left: 463px;
+  padding-right: 463px;
   padding-top: 60px;
   padding-bottom: 30px;
 }
@@ -83,12 +83,32 @@
   width: 100%;
 }
 
+
+@media (max-width: 1700px) {
+  #project-viewer-container {
+    padding-left: 250px;
+    padding-right: 250px;
+  }
+}
+
 @media (max-width: 1400px) {
   #project-viewer-container {
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 190px;
+    padding-right: 190px;
     padding-top: 25px;
     padding-bottom: 25px;
+  }
+
+  .image-preview-container {
+    height: 550px;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  #project-viewer-container {
+    padding-left: 150px;
+    padding-right: 150px;
   }
 
   .image-preview-container {
@@ -122,6 +142,10 @@
     height: 30px;
   }
   
+  .image-preview-container {
+    height: 250px;
+  }
+
   .p-close, .p-minimize, .p-maximize {
     width: 16px;
     height: 16px;
@@ -147,6 +171,11 @@
     padding-top: 45px;
   }
 
+
+#remote-repository-container {
+  margin-bottom: 25px;
+}
+
 }
 
 @media (max-width: 520px) {
@@ -159,5 +188,13 @@
 
   .image-preview-container {
     height: 200px;
+  }
+
+  #project-preview-heading-container,
+  #project-description-container,
+  #technical-section-container,
+  #remote-repository-container  {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
