@@ -1,0 +1,94 @@
+.preload-container {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-color: whitesmoke;
+}
+
+#preload-branding {
+  z-index: 1;
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 28px !important;
+}
+
+.preload-wrapper {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.cog-container {
+  position: absolute;
+}
+
+#cog-container-1 {
+  margin-right: -140px;
+  margin-top: -60px;
+}
+
+#cog-container-2 {
+  margin-top: 155px;
+  margin-right: -15px;
+  transform: rotate(30deg);
+}
+
+#cog-container-3 {
+  margin-top: 56px;
+  margin-right: 145px;
+  transform: rotate(04deg);
+}
+
+#cog-1 {
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
+}
+
+#cog-2 {
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
+  animation-direction: reverse;
+}
+
+#cog-3 {
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  #cog-container-1 {
+    margin-right: -105px;
+    margin-top: -60px;
+  }
+  
+  #cog-container-2 {
+    margin-top: 138px;
+    margin-right: 20px;
+    transform: rotate(35deg);
+  }
+  
+  #cog-container-3 {
+    margin-top: 35px;
+    margin-right: 160px;
+    transform: rotate(10deg);
+  }
+}

@@ -5,6 +5,7 @@ import {
 } from "react-awesome-slider/dist/navigation";
 
 // Slides/Pages
+import Preload from './partials/preload';
 import PageOne from './slides/page-one';
 import PageTwo from './slides/page-two';
 import PageThree from './slides/page-three';
@@ -15,8 +16,8 @@ export const Slider = withNavigationHandlers(AwesomeSlider);
 export default withNavigationContext(() => {
   return (
     <Slider
-      // startupScreen={<div>Cool</div>}
-      // startupDelay={275}
+      startupScreen={<Preload />}
+      startupDelay={2000}
       className="awesome-slider"
       animation="foldOutAnimation"
       media={[
