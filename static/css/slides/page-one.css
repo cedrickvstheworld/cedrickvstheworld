@@ -7,7 +7,6 @@
   height: 100%;
   display: grid;
   align-items: center;
-  /* justify-items: center; */
   padding-bottom: 40px;
   color: #cacaca;
   position: relative;
@@ -46,6 +45,15 @@
   color: #e0e0e0 !important;
 }
 
+
+.about-links-wrapper {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
 .about-page-links {
   position: absolute;
   right: 0;
@@ -53,4 +61,154 @@
 
 .about-link:hover {
   color: #525252 !important;
+}
+
+@media (max-width: 1550px) {
+  #page-one-wrapper {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .hello {
+    font-size: 18em !important;
+    line-height: 1.1;
+  }
+  
+  .hello-secondary {
+    font-size: 45px !important;
+    color: #acacac;
+  }
+  
+  .my-name {
+    font-size: 5em !important;
+    line-height: 1.5;
+  }
+
+  .about-page-links {
+    right: 100px;
+    margin-top: 40px;
+  }
+
+}
+
+
+@media (max-width: 1150px) {
+  .hello {
+    font-size: 12em !important;
+    line-height: 0.6;
+  }
+  
+  .hello-secondary {
+    font-size: 35px !important;
+    color: #acacac;
+  }
+  
+  .my-name {
+    font-size: 4em !important;
+    line-height: 2;
+  }
+
+}
+
+
+
+@media (max-width: 850px) {
+  #page-one-wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .hello {
+    font-size: 10em !important;
+    line-height: 0.6;
+  }
+  
+  .hello-secondary {
+    font-size: 45px !important;
+    color: #acacac;
+    line-height: 2;
+  }
+  
+  .my-name {
+    font-size: 4em !important;
+    line-height: 1;
+  }
+
+  .about-description {
+    font-size: 1.1em !important;
+    line-height: 2.5;
+  }
+
+  .about-page-links {
+    position: unset;
+    /* left: 30px; */
+    width: 100%;
+    display: grid;
+    justify-items: flex-end;
+  }
+}
+
+
+@media (max-width: 650px) {
+  #page-one-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .hello-secondary {
+    font-size: 45px !important;
+    color: #acacac;
+  }
+  
+  .my-name {
+    font-size: 4em !important;
+    line-height: 1.5;
+  }
+
+  .about-description {
+    font-size: 1.1em !important;
+    line-height: 2.5;
+  }
+  
+}
+
+@media (max-width: 470px) {
+  #page-one-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .hello {
+    font-size: 6em !important;
+    line-height: 0.6;
+  }
+  
+  .hello-secondary {
+    font-size: 35px !important;
+    color: #acacac;
+  }
+  
+  .my-name {
+    font-size: 3em !important;
+    line-height: 1.5;
+  }
+
+  .about-description {
+    font-size: 1.1em !important;
+    line-height: 2.5;
+  }
+
+  .about-links-wrapper {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+}
+
+
+@media (max-height: 790px) {
+  #page-one-wrapper {
+    padding-top: 50px;
+  }
+
 }

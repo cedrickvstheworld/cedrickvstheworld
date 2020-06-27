@@ -9,7 +9,7 @@ export default class AboutPage extends React.Component {
     return (
       <div id="page-one-wrapper" className="container grey-text text-lighten-3">
         <div id="content-wrapper">
-          <h3 className="hello">Hello, <span className="hello-secondary">my name is</span></h3>
+          <h3 className="hello">Hello, <span className="hello-secondary">my&nbsp;name&nbsp;is</span></h3>
           <h3 className="my-name teal-text text-lighten-2">Cedrick Domingo</h3>
 
           <div className="about-description grey-text">
@@ -32,22 +32,22 @@ export default class AboutPage extends React.Component {
 
           <div className="about-page-links">
             <ul className="footer-external-links-list">
-              <li className="external-links-wrapper">
+              <li className="about-links-wrapper">
                 <a href={github_profile} rel="noopener noreferrer" target="_blank">
                   <FontAwesomeIcon className="grey-text text-darken-1 about-link" icon={faGithub}  size="3x"/>
                 </a>
               </li>
-              <li className="external-links-wrapper">
+              <li className="about-links-wrapper">
                 <a href={linked_in} rel="noopener noreferrer" target="_blank">
                   <FontAwesomeIcon className="grey-text text-darken-1 about-link" icon={faLinkedin}  size="3x"/>
                 </a>
               </li>
-              <li className="external-links-wrapper">
+              <li className="about-links-wrapper">
                 <a href={facebook_profile} rel="noopener noreferrer" target="_blank">
                   <FontAwesomeIcon className="grey-text text-darken-1 about-link" icon={faFacebookF}  size="3x"/>
                 </a>
               </li>
-              <li className="external-links-wrapper">
+              <li className="about-links-wrapper">
                 <a href={skype_profile} rel="noopener noreferrer" target="_blank">
                   <FontAwesomeIcon className="grey-text text-darken-1 about-link" icon={faSkype}  size="3x"/>
                 </a>
