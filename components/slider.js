@@ -17,7 +17,7 @@ export default withNavigationContext(() => {
   return (
     <Slider
       startupScreen={<Preload />}
-      startupDelay={2000}
+      startupDelay={2300}
       className="awesome-slider"
       animation="foldOutAnimation"
       media={[

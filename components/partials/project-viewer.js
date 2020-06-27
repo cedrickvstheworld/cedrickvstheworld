@@ -67,7 +67,7 @@ export default class ProjectViewer extends React.Component {
     ) : ''
     const repository = project.repository ? (
       <div className="grey-text text-darken-3" id="remote-repository-container">
-        <h6 className="description"><b>Remote&nbsp;Repository:</b> <a className="light-blue-text text-darken-3" href={project.repository}>{project.repository}</a></h6>
+        <h6 className="description"><b>Remote&nbsp;Repository:</b> <a className="light-blue-text text-darken-3 text-highlight" href={project.repository}>{project.repository}</a></h6>
       </div>
     ) : ''
 
@@ -75,7 +75,7 @@ export default class ProjectViewer extends React.Component {
       <div className="animate__animated animate__fadeInDown animate__faster" id="project-viewer">
         <div id="project-viewer-container">
           <div id="project-preview-heading-container">
-            <h4 id="project-viewer-heading" className="grey-text text-darken-3"><b>{project.title}</b></h4>
+            <h4 id="project-viewer-heading" className="grey-text text-darken-3">{project.title}</h4>
             <div className="row no-margin">
               <div className="col l6 m6 s12 no-margin">
                 <p className="little-text grey-text text-darken-2">{project.healthText}</p>

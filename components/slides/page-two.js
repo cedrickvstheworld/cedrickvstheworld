@@ -79,7 +79,7 @@ export default class PageTwo extends React.Component {
             <FunCubes />
             <header className="portfolio-header">
               <div>
-                <h4><b>Portfolio</b></h4>
+                <h3>Portfolio</h3>
                 <p className="description">Adipisicing aliqua irure excepteur ea in do. Cillum fugiat consequat sint deserunt non officia aliquip est quis aute dolore. Nisi dolor ut aute nostrud tempor incididunt officia ut anim ipsum minim irure veniam non.</p>
               </div>
               <div>

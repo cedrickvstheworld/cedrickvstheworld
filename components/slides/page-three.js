@@ -22,7 +22,12 @@ export default class Contact extends React.Component {
   }
 
   componentDidMount() {
+    this._ismounted = true;
     this.showLabels();
+  }
+
+  componentWillUnmount() {
+    this._ismounted = false
   }
 
   async showLabels() {
@@ -31,16 +36,22 @@ export default class Contact extends React.Component {
     const email = 'Your Email';
     const textarea = 'write your message here. . .';
     for (let i in [...Array(name.length).keys()]) {
-      await this.setState({nameLabel: this.state.nameLabel + name.charAt(parseInt(i))})
-      await new Promise(r => setTimeout(r, 40));
+      if (this._ismounted) {
+        await this.setState({nameLabel: this.state.nameLabel + name.charAt(parseInt(i))})
+        await new Promise(r => setTimeout(r, 40));
+      }
     }
     for (let i in [...Array(email.length).keys()]) {
-      await this.setState({emailLabel: this.state.emailLabel + email.charAt(parseInt(i))})
-      await new Promise(r => setTimeout(r, 40));
+      if (this._ismounted) {
+        await this.setState({emailLabel: this.state.emailLabel + email.charAt(parseInt(i))})
+        await new Promise(r => setTimeout(r, 40));
+      }
     }
     for (let i in [...Array(textarea.length).keys()]) {
-      await this.setState({textareaLabel: this.state.textareaLabel + textarea.charAt(parseInt(i))})
-      await new Promise(r => setTimeout(r, 40));
+      if (this._ismounted) {
+        await this.setState({textareaLabel: this.state.textareaLabel + textarea.charAt(parseInt(i))})
+        await new Promise(r => setTimeout(r, 40));
+      }
     }
   }
 
@@ -81,7 +92,7 @@ export default class Contact extends React.Component {
         <div className="row">
           <div className="col s12 m10 l10 contact-form-container">
             <header className="contact-header">
-              <h3><b>Ping Me</b></h3>
+              <h3>Ping Me</h3>
               <p className="grey-text text-darken-1 description">Veniam minim aliqua laboris irure veniam sunt tempor officia eiusmod qui fugiat.</p>
             </header>
             <section className="contact-form">

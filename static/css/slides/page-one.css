@@ -7,5 +7,50 @@
   height: 100%;
   display: grid;
   align-items: center;
-  justify-items: center;
+  /* justify-items: center; */
+  padding-bottom: 40px;
+  color: #cacaca;
+  position: relative;
+}
+
+.hello {
+  font-size: 20em !important;
+  line-height: 1.1;
+}
+
+.hello-secondary {
+  font-size: 85px !important;
+  color: #acacac;
+}
+
+.my-name {
+  font-size: 10em !important;
+  line-height: 1.5;
+}
+
+.about-description {
+  font-size: 1.29em !important;
+  line-height: 2.5;
+}
+
+.text-highlight {
+  background-image: linear-gradient(to right, transparent 50%, rgb(59, 59, 59)  50%);
+  transition: background-color 0.2s linear;
+  background-position: 0;
+  background-size: 200%;
+  transition: all 0.2s
+}
+
+.text-highlight:hover {
+  background-position: -100%;
+  color: #e0e0e0 !important;
+}
+
+.about-page-links {
+  position: absolute;
+  right: 0;
+}
+
+.about-link:hover {
+  color: #525252 !important;
 }
