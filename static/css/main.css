@@ -46,6 +46,19 @@ h1, h2, h3, h4 {
   line-height: 2 !important;
 }
 
+.text-highlight {
+  background-image: linear-gradient(to right, transparent 50%, rgb(59, 59, 59)  50%);
+  transition: background-color 0.2s linear;
+  background-position: 0;
+  background-size: 200%;
+  transition: all 0.2s
+}
+
+.text-highlight:hover {
+  background-position: -100%;
+  color: #e0e0e0 !important;
+}
+
 .clickable {
   cursor: pointer;
 }
@@ -95,7 +108,7 @@ textarea {
   }
 
   .description {
-    font-size: 1rem;
+    font-size: 1.15rem;
     line-height: 1.5 !important;
   }
 

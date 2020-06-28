@@ -28,14 +28,16 @@ export default class ProjectViewer extends React.Component {
   hideFunCubesOnScroll() {
     const funCubes = document.getElementById('fun-cubes-container')
     const projectViewerPane = document.getElementById('project-viewer-container')
-    let y = projectViewerPane.getBoundingClientRect().y
-    if (y <= this.pageY) {
-      funCubes.style.display = 'none';
+    if (projectViewerPane) {
+      let y = projectViewerPane.getBoundingClientRect().y
+      if (y <= this.pageY) {
+        funCubes.style.display = 'none';
+      }
+      else {
+        funCubes.style.display = 'grid';
+      }
+      this.pageY = y;
     }
-    else {
-      funCubes.style.display = 'grid';
-    }
-    this.pageY = y;
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
