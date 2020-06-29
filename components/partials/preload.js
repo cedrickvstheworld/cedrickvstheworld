@@ -25,7 +25,7 @@ export default class Preload extends React.Component {
 
   render() {
     return (
-      <div className="preload-container">
+      <div id="preload-container">
         <div className="preload-wrapper">
           <div id="cog-container-1" className="cog-container">
             <FontAwesomeIcon id="cog-1" className="cog blue-grey-text" icon={faCog}  size="10x"/>

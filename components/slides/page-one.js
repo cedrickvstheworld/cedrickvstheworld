@@ -28,7 +28,9 @@ export default class AboutPage extends React.Component {
   }
 
   async revealLines() {
-    await new Promise(r => setTimeout(r, 2600));
+    if (document.getElementById('preload-container')) {
+      await new Promise(r => setTimeout(r, 2600));
+    }
     const lines = {
       line1: 'I am a programer and a software developer with expertise in web development.',
       line2: 'You can check out the recent projects that I made or have collaborated with at the',
