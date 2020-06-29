@@ -4,7 +4,7 @@ import {faPaperPlane} from '@fortawesome/free-solid-svg-icons';
 import {faGithub, faFacebook, faSkype, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 import {github_profile, facebook_profile, skype_profile, linked_in} from '../../contents/links';
 import Footer from '../partials/footer';
-import {inputWarning} from '../../static/js/helpers';
+import {inputWarning, Key} from '../../static/js/helpers';
 
 export default class Contact extends React.Component {
   constructor() {
@@ -24,10 +24,12 @@ export default class Contact extends React.Component {
   componentDidMount() {
     this._ismounted = true;
     this.showLabels();
+    this.submitBtn = new Key(document, 13, this.submit);
   }
 
   componentWillUnmount() {
     this._ismounted = false
+    this.submitBtn.unbind();
   }
 
   async showLabels() {
@@ -86,6 +88,10 @@ export default class Contact extends React.Component {
     // using sendgrid to send email
   }
 
+  handleSubmit() {
+
+  }
+
   render() {
     return (
       <div id="contact-page-wrapper" className="container grey-text text-lighten-2">
@@ -95,7 +101,7 @@ export default class Contact extends React.Component {
               <h3>Ping Me</h3>
               <p className="grey-text text-darken-1 description">Veniam minim aliqua laboris irure veniam sunt tempor officia eiusmod qui fugiat.</p>
             </header>
-            <section className="contact-form">
+            <form className="contact-form">
               <div className="message-content">
                 
               </div>
@@ -108,12 +114,12 @@ export default class Contact extends React.Component {
                 name="message" onChange={this.fetchFieldValue} value={this.state.message}></textarea>
               </div>
               <div className="contact-form-footer">
-                <button onClick={this.submit} className="waves-effect waves-light btn btn-large">
+                <button type="submit" onClick={this.submit} className="waves-effect waves-light btn btn-large">
                   <FontAwesomeIcon icon={faPaperPlane} />&nbsp;
                   Send
                 </button>
               </div>
-            </section>
+            </form>
           </div>
           <div className="col s12 m2 l2 contact-links">
             <div className="">

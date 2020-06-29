@@ -47,3 +47,20 @@ export function inputWarning(input) {
     clearTimeout(clearWarning);
   }, 1100);
 }
+
+export class Key {
+  constructor(document, keyCode, func) {
+    this.document = document;
+    this.keyCode = keyCode;
+    this.func = func;
+    this.bind();
+  }
+
+  bind() {
+    this.document.addEventListener('keydown', this.func);
+  }
+
+  unbind() {
+    this.document.removeEventListener('keydown', this.func);
+  }
+}
