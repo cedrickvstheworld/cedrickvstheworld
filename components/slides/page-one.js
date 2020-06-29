@@ -3,6 +3,7 @@ import {Link} from "react-awesome-slider/dist/navigation";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faGithub, faFacebookF, faGoogle, faSkype, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 import { github_profile, facebook_profile, skype_profile, linked_in } from '../../contents/links';
+import Hamburger from '../partials/hamburger';
 
 export default class AboutPage extends React.Component {
   constructor () {
@@ -57,60 +58,63 @@ export default class AboutPage extends React.Component {
 
   render() {
     return (
-      <div id="page-one-wrapper" className="container grey-text text-lighten-3">
-        <div id="content-wrapper">
-          <h3 className="hello">
-            <span id="h">H</span>
-            <span id="e">e</span>
-            <span id="l1">l</span>
-            <span id="l2">l</span>
-            <span id="o">o</span>
-            <span id="hello-base">Hello</span>, <span className="hello-secondary">my&nbsp;name&nbsp;is</span></h3>
-          <h3 className="my-name teal-text text-lighten-2 animate__animated animate__fadeIn">Cedrick Domingo</h3>
+      <div>
+        <Hamburger />
+        <div id="page-one-wrapper" className="container grey-text text-lighten-3">
+          <div id="content-wrapper">
+            <h3 className="hello">
+              <span id="h">H</span>
+              <span id="e">e</span>
+              <span id="l1">l</span>
+              <span id="l2">l</span>
+              <span id="o">o</span>
+              <span id="hello-base">Hello</span>, <span className="hello-secondary">my&nbsp;name&nbsp;is</span></h3>
+            <h3 className="my-name teal-text text-lighten-2 animate__animated animate__fadeIn">Cedrick Domingo</h3>
 
-          <div className="about-description grey-text">
-            <span>{this.state.line1}</span><br />
+            <div className="about-description grey-text">
+              <span>{this.state.line1}</span><br />
 
-            <span>{this.state.line2}&nbsp;
-              <b>
-                <Link className="grey-text text-lighten-2 text-highlight"  href="/portfolio">
-                  {this.state.line2Link}
-                </Link></b>{this.state.line2End}</span><br />
+              <span>{this.state.line2}&nbsp;
+                <b>
+                  <Link className="grey-text text-lighten-2 text-highlight"  href="/portfolio">
+                    {this.state.line2Link}
+                  </Link></b>{this.state.line2End}</span><br />
 
-            <span>{this.state.line3}&nbsp;
-              <b>
-                <Link className="grey-text text-lighten-2 text-highlight"  href="/contact">
-                  {this.state.line3Link}
-                </Link>
-              </b>{this.state.line3End}</span>
+              <span>{this.state.line3}&nbsp;
+                <b>
+                  <Link className="grey-text text-lighten-2 text-highlight"  href="/contact">
+                    {this.state.line3Link}
+                  </Link>
+                </b>{this.state.line3End}</span>
+            </div>
+
+
+            <div className="about-page-links animate__animated animate__fadeInRight">
+              <ul className="footer-external-links-list">
+                <li className="about-links-wrapper">
+                  <a href={github_profile} rel="noopener noreferrer" target="_blank">
+                    <FontAwesomeIcon className="grey-text text-darken-1 about-link" icon={faGithub}  size="3x"/>
+                  </a>
+                </li>
+                <li className="about-links-wrapper">
+                  <a href={linked_in} rel="noopener noreferrer" target="_blank">
+                    <FontAwesomeIcon className="grey-text text-darken-1 about-link" icon={faLinkedin}  size="3x"/>
+                  </a>
+                </li>
+                <li className="about-links-wrapper">
+                  <a href={facebook_profile} rel="noopener noreferrer" target="_blank">
+                    <FontAwesomeIcon className="grey-text text-darken-1 about-link" icon={faFacebookF}  size="3x"/>
+                  </a>
+                </li>
+                <li className="about-links-wrapper">
+                  <a href={skype_profile} rel="noopener noreferrer" target="_blank">
+                    <FontAwesomeIcon className="grey-text text-darken-1 about-link" icon={faSkype}  size="3x"/>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
           </div>
-
-
-          <div className="about-page-links animate__animated animate__fadeInRight">
-            <ul className="footer-external-links-list">
-              <li className="about-links-wrapper">
-                <a href={github_profile} rel="noopener noreferrer" target="_blank">
-                  <FontAwesomeIcon className="grey-text text-darken-1 about-link" icon={faGithub}  size="3x"/>
-                </a>
-              </li>
-              <li className="about-links-wrapper">
-                <a href={linked_in} rel="noopener noreferrer" target="_blank">
-                  <FontAwesomeIcon className="grey-text text-darken-1 about-link" icon={faLinkedin}  size="3x"/>
-                </a>
-              </li>
-              <li className="about-links-wrapper">
-                <a href={facebook_profile} rel="noopener noreferrer" target="_blank">
-                  <FontAwesomeIcon className="grey-text text-darken-1 about-link" icon={faFacebookF}  size="3x"/>
-                </a>
-              </li>
-              <li className="about-links-wrapper">
-                <a href={skype_profile} rel="noopener noreferrer" target="_blank">
-                  <FontAwesomeIcon className="grey-text text-darken-1 about-link" icon={faSkype}  size="3x"/>
-                </a>
-              </li>
-            </ul>
-          </div>
-
         </div>
       </div>
     );

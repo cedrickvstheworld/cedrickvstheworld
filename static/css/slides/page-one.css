@@ -4,7 +4,7 @@
 
 #page-one-wrapper {
   width: 100%;
-  height: 100%;
+  height: 100vh !important;
   align-items: center;
   padding-bottom: 40px;
   color: #cacaca;
@@ -15,7 +15,7 @@
   -khtml-user-select: none; 
   -moz-user-select: none; 
   -ms-user-select: none;
-  user-select: none; 
+  user-select: none;
 }
 
 .hello {
@@ -143,8 +143,8 @@
 }
 
 .about-page-links {
-  position: absolute;
-  right: 0;
+  display: grid;
+  justify-items: flex-end;
 }
 
 .about-link:hover {
@@ -229,10 +229,7 @@
 
   .about-page-links {
     position: unset;
-    /* left: 30px; */
     width: 100%;
-    display: grid;
-    justify-items: flex-end;
   }
 }
 
