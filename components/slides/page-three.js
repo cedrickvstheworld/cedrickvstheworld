@@ -5,6 +5,7 @@ import {faGithub, faFacebook, faSkype, faLinkedin} from '@fortawesome/free-brand
 import {github_profile, facebook_profile, skype_profile, linked_in} from '../../contents/links';
 import Footer from '../partials/footer';
 import {inputWarning, Key} from '../../static/js/helpers';
+import sendMail from '../../static/js/send-mail';
 
 export default class Contact extends React.Component {
   constructor() {
@@ -86,10 +87,13 @@ export default class Contact extends React.Component {
       return false;
     }
     // using sendgrid to send email
-  }
-
-  handleSubmit() {
-
+    sendMail(this.state.name, this.state.email, this.state.message)
+    .then(() => {
+      console.log('sent');
+    })
+    .catch(() => {
+      console.log('failed');
+    })
   }
 
   render() {
@@ -101,7 +105,7 @@ export default class Contact extends React.Component {
               <h3>Ping Me</h3>
               <p className="grey-text text-darken-1 description">Veniam minim aliqua laboris irure veniam sunt tempor officia eiusmod qui fugiat.</p>
             </header>
-            <form className="contact-form">
+            <div className="contact-form">
               <div className="message-content">
                 
               </div>
@@ -114,12 +118,12 @@ export default class Contact extends React.Component {
                 name="message" onChange={this.fetchFieldValue} value={this.state.message}></textarea>
               </div>
               <div className="contact-form-footer">
-                <button type="submit" onClick={this.submit} className="waves-effect waves-light btn btn-large">
+                <button onClick={this.submit} className="waves-effect waves-light btn btn-large">
                   <FontAwesomeIcon icon={faPaperPlane} />&nbsp;
                   Send
                 </button>
               </div>
-            </form>
+            </div>
           </div>
           <div className="col s12 m2 l2 contact-links">
             <div className="">

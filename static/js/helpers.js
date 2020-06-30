@@ -57,11 +57,19 @@ export class Key {
   }
 
   bind() {
-    this.document.addEventListener('keydown', this.func);
+    this.document.addEventListener('keydown', (e) => {
+      if (e.keyCode === this.keyCode) {
+        this.func()
+      }
+    });
   }
 
   unbind() {
-    this.document.removeEventListener('keydown', this.func);
+    this.document.removeEventListener('keydown', (e) => {
+      if (e.keyCode === this.keyCode) {
+        this.func()
+      }
+    });
   }
 }
 
