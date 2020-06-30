@@ -3,7 +3,7 @@ import Slider from './preview-slider';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faExternalLinkAlt} from '@fortawesome/free-solid-svg-icons';
 import Footer from '../partials/footer';
-import {Scroll, funCubes, navigationButtons} from '../../static/js/helpers';
+import {Cloak, funCubes, navigationButtons} from '../../static/js/helpers';
 import FunCubes from './fun-cubes';
 
 export default class ProjectViewer extends React.Component {
@@ -13,30 +13,16 @@ export default class ProjectViewer extends React.Component {
       projectData: props.projectData,
     };
     this.returnToParent = this.returnToParent.bind(this);
+    this.scrollEvent = this.scrollEvent.bind(this);
   }
 
   componentDidMount() {
     this.viewProjectNav = new funCubes(document);
     this.viewProjectNav.show();
-    this.Scroll = new Scroll(document);
-    this.Scroll.hideElementsOnScrollDown(
-      document.getElementById('slide-content-container'),
-      [
-        document.getElementById('hamburger-container'),
-        document.getElementById('fun-cubes-container')
-      ]
-    );
+    this.cloak = new Cloak();
   }
 
   componentWillUnmount() {
-    this.Scroll = new Scroll(document);
-    this.Scroll.hideElementsOnScrollDown(
-      document.getElementById('slide-content-container'),
-      [
-        document.getElementById('hamburger-container'),
-        document.getElementById('fun-cubes-container')
-      ]
-    );
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -59,6 +45,16 @@ export default class ProjectViewer extends React.Component {
       this.props.unmount();
       clearTimeout(unmount);
     }, 500);
+  }
+
+  scrollEvent() {
+    this.cloak.hideElementsOnScrollDown(
+      document.getElementById('project-viewer-container'),
+      [
+        document.getElementById('hamburger-container'),
+        document.getElementById('fun-cubes-container')
+      ]
+    );
   }
 
   render() {
@@ -90,52 +86,54 @@ export default class ProjectViewer extends React.Component {
     ) : ''
 
     return (
-      <div className="animate__animated animate__fadeInDown animate__faster" id="project-viewer">
+      <div>
         <div onClick={this.returnToParent}>
           <FunCubes />
         </div>
-        <div id="project-viewer-container">
-          <div id="project-preview-heading-container">
-            <h4 id="project-viewer-heading" className="grey-text text-darken-3">{project.title}</h4>
-            <div className="row no-margin">
-              <div className="col l6 m6 s12 no-margin">
-                <p className="little-text grey-text text-darken-2">{project.healthText}</p>
-                {webLinkAlt}
-              </div>
-              <div className="col l6 m6 s12 no-margin right-align">
-                {webLink}
+        <div onScroll={this.scrollEvent} className="animate__animated animate__fadeInDown animate__faster" id="project-viewer">
+          <div id="project-viewer-container">
+            <div id="project-preview-heading-container">
+              <h4 id="project-viewer-heading" className="grey-text text-darken-3">{project.title}</h4>
+              <div className="row no-margin">
+                <div className="col l6 m6 s12 no-margin">
+                  <p className="little-text grey-text text-darken-2">{project.healthText}</p>
+                  {webLinkAlt}
+                </div>
+                <div className="col l6 m6 s12 no-margin right-align">
+                  {webLink}
+                </div>
               </div>
             </div>
-          </div>
 
-          <div>
-            <div className="image-preview-window">
-              <div className="p-maximize green lighten-1">
+            <div>
+              <div className="image-preview-window">
+                <div className="p-maximize green lighten-1">
+                </div>
+                <div className="p-minimize yellow lighten-1">
+                </div>
+                <div className="p-close red lighten-1">
+                </div>
+                {/* title bar */}
+                <div className="image-preview-title-bar">
+                </div>
+                <Slider previews={project.previews}/>
               </div>
-              <div className="p-minimize yellow lighten-1">
-              </div>
-              <div className="p-close red lighten-1">
-              </div>
-              {/* title bar */}
-              <div className="image-preview-title-bar">
-              </div>
-              <Slider previews={project.previews}/>
+            </div>
+
+            <div id="project-description-container">
+              <h6 className="description grey-text text-darken-3"><p>{project.description}</p></h6>
+            </div>
+            {repository}
+            <div className="grey-text text-darken-3" id="technical-section-container">
+              <h5><b>Tools, technologies, stacks (or whatever you may call them) I got involved in this project.</b></h5>
+              <div className="underline"></div>
+              <ul id="tools-list">
+                {tools}
+              </ul>
             </div>
           </div>
-
-          <div id="project-description-container">
-            <h6 className="description grey-text text-darken-3"><p>{project.description}</p></h6>
-          </div>
-          {repository}
-          <div className="grey-text text-darken-3" id="technical-section-container">
-            <h5><b>Tools, technologies, stacks (or whatever you may call them) I got involved in this project.</b></h5>
-            <div className="underline"></div>
-            <ul id="tools-list">
-              {tools}
-            </ul>
-          </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
     );
   }

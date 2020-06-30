@@ -72,7 +72,7 @@ export class Hamburger {
   }
 
   async secondForm() {
-    this.nav.hide()
+    // this.nav.hide()
     this.button.classList.add('hamburger-second-form-trigger');
     this.button.classList.remove('hamburger-first-form');
     await new Promise(r => setTimeout(r, 700));
@@ -88,7 +88,7 @@ export class Hamburger {
     await new Promise(r => setTimeout(r, 700));
     this.button.classList.remove('hamburger-first-form-trigger');
     this.button.classList.add('hamburger-first-form');
-    this.nav.show()
+    // this.nav.show()
   }
 
   show() {
@@ -97,14 +97,13 @@ export class Hamburger {
 }
 
 
-export class Scroll {
-  constructor(doc) {
-    this.document = doc;
+export class Cloak {
+  constructor() {
     this.pageY = 0;
   }
 
   hideElementsOnScrollDown(scrollingPane, elements) {
-    function hideElements() {
+    if (window.innerWidth < 550) {
       if (scrollingPane) {
         let y = scrollingPane.getBoundingClientRect().y
         if (y <= this.pageY) {
@@ -119,13 +118,6 @@ export class Scroll {
         }
         this.pageY = y;
       }
-    }
-    if (window.innerWidth < 550) {
-      scrollingPane.addEventListener(
-        'scroll',
-        hideElements,
-        true
-      );
     }
   }
 

@@ -47,7 +47,7 @@ export default withNavigationContext(() => {
             'https://images.pexels.com/photos/3689772/pexels-photo-3689772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
             'https://images.pexels.com/photos/1713953/pexels-photo-1713953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'          
           ],
-          className: "page-two slide",
+          className: "page-two",
           children: <PageTwo />
         },
 

@@ -2,7 +2,7 @@ import React from 'react';
 import {PROJECT_CARD_CONTENTS, PROJECT_INFO} from '../../contents/project';
 import ProjectViewer from '../partials/project-viewer';
 import Footer from '../partials/footer';
-import {navigationButtons, Scroll} from '../../static/js/helpers';
+import {navigationButtons, Cloak} from '../../static/js/helpers';
 
 
 export default class PageTwo extends React.Component {
@@ -13,15 +13,12 @@ export default class PageTwo extends React.Component {
       projectViewer: false
     };
     this.unmountProjectViewer = this.unmountProjectViewer.bind(this);
+    this.scrollEvent = this.scrollEvent.bind(this);
   }
 
   componentDidMount() {
     this.navButtons = new navigationButtons(document);
-    this.Scroll = new Scroll(document);
-    this.Scroll.hideElementsOnScrollDown(
-      document.getElementById('slide-content-container'),
-      [document.getElementById('hamburger-container')]
-    );
+    this.cloak = new Cloak();
   }
 
    mapProject(data, index) {
@@ -75,6 +72,12 @@ export default class PageTwo extends React.Component {
     this.setState({projectViewer: false})
   }
 
+  scrollEvent() {
+    this.cloak.hideElementsOnScrollDown(
+      document.getElementById('slide-content-container'),
+      [document.getElementById('hamburger-container')]
+    );
+  }
 
 
   render() {
@@ -87,23 +90,25 @@ export default class PageTwo extends React.Component {
     return (
       <div>
         {this.state.projectViewer ? <ProjectViewer projectData={this.state} unmount={this.unmountProjectViewer}/> : null}
-        <div id="page-two-wrapper" className="container grey-text text-darken-3">
-          <div className="slide-content-container" id="slide-content-container">
-            <header className="portfolio-header">
-              <div>
-                <h3>Portfolio</h3>
-                <p className="description">Adipisicing aliqua irure excepteur ea in do. Cillum fugiat consequat sint deserunt non officia aliquip est quis aute dolore. Nisi dolor ut aute nostrud tempor incididunt officia ut anim ipsum minim irure veniam non.</p>
+        <div onScroll={this.scrollEvent} className="slide">
+          <div id="page-two-wrapper" className="container grey-text text-darken-3">
+            <div className="slide-content-container" id="slide-content-container">
+              <header className="portfolio-header">
+                <div>
+                  <h3>Portfolio</h3>
+                  <p className="description">Adipisicing aliqua irure excepteur ea in do. Cillum fugiat consequat sint deserunt non officia aliquip est quis aute dolore. Nisi dolor ut aute nostrud tempor incididunt officia ut anim ipsum minim irure veniam non.</p>
+                </div>
+                <div>
+                  <p className="grey-text text-darken-1">Anim nostrud do irure dolore dolor nostrud quis. dolore dolor nostrud quis.</p>
+                </div>
+              </header>
+              <div id="projects-container" className="row">
+                {Projects}
               </div>
-              <div>
-                <p className="grey-text text-darken-1">Anim nostrud do irure dolore dolor nostrud quis. dolore dolor nostrud quis.</p>
-              </div>
-            </header>
-            <div id="projects-container" className="row">
-              {Projects}
             </div>
+            <Footer />
           </div>
         </div>
-        <Footer />
       </div>
     );
   }
