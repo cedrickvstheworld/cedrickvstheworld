@@ -1,28 +1,14 @@
-import {funCubes as fc, navigationButtons} from '../../static/js/helpers';
 import React from 'react';
 
 
 export default class FunCubes extends React.Component {
   constructor(props) {
     super(props);
-    this.returnToParent = this.returnToParent.bind(this);
-  }
-
-  returnToParent() {
-    const projectViewer = document.getElementById('project-viewer');
-    projectViewer.classList.add('animate__fadeOutUp');
-    const hideToDisplay = setTimeout(() => {
-      projectViewer.classList.remove('animate__fadeOutUp');
-      projectViewer.style.display = 'none';
-      clearTimeout(hideToDisplay);
-    }, 500);
-    new fc(document).hide();
-    new navigationButtons(document).show();
   }
 
   render() {
     return (
-      <div onClick={this.returnToParent} className="animate__animated" id="fun-cubes-container">
+      <div className="animate__animated" id="fun-cubes-container">
   
         <div id="box0" className="fun-cube animate__animated animate__fadeInTopLeft">
         </div>

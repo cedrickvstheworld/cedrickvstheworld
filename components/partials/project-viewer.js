@@ -2,47 +2,63 @@ import React from 'react';
 import Slider from './preview-slider';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faExternalLinkAlt} from '@fortawesome/free-solid-svg-icons';
-import {faGithub, faFacebookF, faGooglePlusG} from '@fortawesome/free-brands-svg-icons';
 import Footer from '../partials/footer';
+import {Scroll, funCubes, navigationButtons} from '../../static/js/helpers';
+import FunCubes from './fun-cubes';
 
 export default class ProjectViewer extends React.Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       projectData: props.projectData,
     };
-    this.hideFunCubesOnScroll = this.hideFunCubesOnScroll.bind(this);
-    this.pageY = 0
+    this.returnToParent = this.returnToParent.bind(this);
   }
 
   componentDidMount() {
-    if (window.innerWidth < 550) {
-      document.addEventListener(
-        'scroll',
-        this.hideFunCubesOnScroll,
-        true
-      );
-    }
+    this.viewProjectNav = new funCubes(document);
+    this.viewProjectNav.show();
+    this.Scroll = new Scroll(document);
+    this.Scroll.hideElementsOnScrollDown(
+      document.getElementById('slide-content-container'),
+      [
+        document.getElementById('hamburger-container'),
+        document.getElementById('fun-cubes-container')
+      ]
+    );
   }
 
-  hideFunCubesOnScroll() {
-    const funCubes = document.getElementById('fun-cubes-container')
-    const projectViewerPane = document.getElementById('project-viewer-container')
-    if (projectViewerPane) {
-      let y = projectViewerPane.getBoundingClientRect().y
-      if (y <= this.pageY) {
-        funCubes.style.display = 'none';
-      }
-      else {
-        funCubes.style.display = 'grid';
-      }
-      this.pageY = y;
-    }
+  componentWillUnmount() {
+    this.Scroll = new Scroll(document);
+    this.Scroll.hideElementsOnScrollDown(
+      document.getElementById('slide-content-container'),
+      [
+        document.getElementById('hamburger-container'),
+        document.getElementById('fun-cubes-container')
+      ]
+    );
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({projectData: nextProps.projectData})
     return false;  
+  }
+
+
+  returnToParent() {
+    const projectViewer = document.getElementById('project-viewer');
+    projectViewer.classList.add('animate__fadeOutUp');
+    const hideToDisplay = setTimeout(() => {
+      projectViewer.classList.remove('animate__fadeOutUp');
+      projectViewer.style.display = 'none';
+      clearTimeout(hideToDisplay);
+    }, 500);
+    new funCubes(document).hide();
+    new navigationButtons(document).show();
+    const unmount = setTimeout(() => {
+      this.props.unmount();
+      clearTimeout(unmount);
+    }, 500);
   }
 
   render() {
@@ -75,6 +91,9 @@ export default class ProjectViewer extends React.Component {
 
     return (
       <div className="animate__animated animate__fadeInDown animate__faster" id="project-viewer">
+        <div onClick={this.returnToParent}>
+          <FunCubes />
+        </div>
         <div id="project-viewer-container">
           <div id="project-preview-heading-container">
             <h4 id="project-viewer-heading" className="grey-text text-darken-3">{project.title}</h4>

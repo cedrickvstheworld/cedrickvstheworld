@@ -2,19 +2,26 @@ import React from 'react';
 import {PROJECT_CARD_CONTENTS, PROJECT_INFO} from '../../contents/project';
 import ProjectViewer from '../partials/project-viewer';
 import Footer from '../partials/footer';
-import FunCubes from '../partials/fun-cubes';
-import {navigationButtons, funCubes} from '../../static/js/helpers';
+import {navigationButtons, Scroll} from '../../static/js/helpers';
 
 
 export default class PageTwo extends React.Component {
   constructor(props) {
     super(props);
-    this.state = PROJECT_INFO[0];
+    this.state = {
+      ...PROJECT_INFO[0],
+      projectViewer: false
+    };
+    this.unmountProjectViewer = this.unmountProjectViewer.bind(this);
   }
 
   componentDidMount() {
     this.navButtons = new navigationButtons(document);
-    this.viewProjectNav = new funCubes(document);
+    this.Scroll = new Scroll(document);
+    this.Scroll.hideElementsOnScrollDown(
+      document.getElementById('slide-content-container'),
+      [document.getElementById('hamburger-container')]
+    );
   }
 
    mapProject(data, index) {
@@ -57,12 +64,18 @@ export default class PageTwo extends React.Component {
 
   async viewProject(projectInfo) {
     await this.setState(projectInfo);
+    await this.setState({projectViewer: true});
     const projectViewer = document.getElementById("project-viewer")
     projectViewer.style.display = 'block';
     projectViewer.scrollTop = 0;
     this.navButtons.hide();
-    this.viewProjectNav.show();
   }
+
+  unmountProjectViewer() {
+    this.setState({projectViewer: false})
+  }
+
+
 
   render() {
     // projects
@@ -73,10 +86,9 @@ export default class PageTwo extends React.Component {
 
     return (
       <div>
-        <ProjectViewer projectData={this.state}/>
+        {this.state.projectViewer ? <ProjectViewer projectData={this.state} unmount={this.unmountProjectViewer}/> : null}
         <div id="page-two-wrapper" className="container grey-text text-darken-3">
-          <div className="slide-content-container">
-            <FunCubes />
+          <div className="slide-content-container" id="slide-content-container">
             <header className="portfolio-header">
               <div>
                 <h3>Portfolio</h3>

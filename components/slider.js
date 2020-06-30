@@ -16,14 +16,19 @@ export const Slider = withNavigationHandlers(AwesomeSlider);
 export default withNavigationContext(() => {
   return (
     <Slider
-      // startupScreen={<Preload />}
+      startupScreen={<Preload />}
       // startupDelay={2300}
+      startupDelay={100}
       className="awesome-slider"
       animation="foldOutAnimation"
       onTransitionEnd={() => {
         const pageOne = document.getElementById('page-one-wrapper')
         if (pageOne) {
           pageOne.style.display = 'grid';
+        }
+        const hamburger = document.getElementById('hamburger-container')
+        if (hamburger) {
+          hamburger.style.display = 'grid';
         }
       }}
       media={[

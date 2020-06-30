@@ -101,6 +101,12 @@ textarea {
   }
 }
 
+@media (max-width: 550px) {
+  .portfolio-header {
+    padding-top: 20px;
+  }
+}
+
 @media (max-width: 520px) {
   .portfolio-header {
     padding-left: 15px;

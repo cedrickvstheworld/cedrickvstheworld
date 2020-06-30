@@ -172,9 +172,9 @@
   }
 
 
-#remote-repository-container {
-  margin-bottom: 25px;
-}
+  #remote-repository-container {
+    margin-bottom: 25px;
+  }
 
 }
 
@@ -182,7 +182,6 @@
   #project-viewer-container {
     padding-left: 0;
     padding-right: 0;
-    /* padding-top: 15px; */
     padding-bottom: 40px;
   }
 

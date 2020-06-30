@@ -64,3 +64,69 @@ export class Key {
     this.document.removeEventListener('keydown', this.func);
   }
 }
+
+export class Hamburger {
+  constructor(doc) {
+    this.button = doc.getElementById('hamburger');
+    this.nav = new navigationButtons(doc);
+  }
+
+  async secondForm() {
+    this.nav.hide()
+    this.button.classList.add('hamburger-second-form-trigger');
+    this.button.classList.remove('hamburger-first-form');
+    await new Promise(r => setTimeout(r, 700));
+    this.button.classList.add('hamburger-second-form-hover');
+    this.button.classList.add('hamburger-second-form');
+    this.button.classList.remove('hamburger-second-form-trigger');
+  }
+
+  async firstForm() {
+    this.button.classList.add('hamburger-first-form-trigger');
+    this.button.classList.remove('hamburger-second-form-hover');
+    this.button.classList.remove('hamburger-second-form');
+    await new Promise(r => setTimeout(r, 700));
+    this.button.classList.remove('hamburger-first-form-trigger');
+    this.button.classList.add('hamburger-first-form');
+    this.nav.show()
+  }
+
+  show() {
+    this.button.style.display = 'grid';
+  }
+}
+
+
+export class Scroll {
+  constructor(doc) {
+    this.document = doc;
+    this.pageY = 0;
+  }
+
+  hideElementsOnScrollDown(scrollingPane, elements) {
+    function hideElements() {
+      if (scrollingPane) {
+        let y = scrollingPane.getBoundingClientRect().y
+        if (y <= this.pageY) {
+          for (let i in elements) {
+            elements[i].style.display = 'none';
+          }
+        }
+        else {
+          for (let i in elements) {
+            elements[i].style.display = 'grid';
+          }
+        }
+        this.pageY = y;
+      }
+    }
+    if (window.innerWidth < 550) {
+      scrollingPane.addEventListener(
+        'scroll',
+        hideElements,
+        true
+      );
+    }
+  }
+
+}

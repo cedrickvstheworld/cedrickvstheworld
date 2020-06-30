@@ -1,9 +1,9 @@
 #fun-cubes-container {
-  height: 60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
   position: absolute;
-  left: 30px;
-  top: 30px;
+  left: 100px;
+  top: 40px;
   z-index: 9;
   display: none;
   grid-template-areas:
@@ -17,15 +17,15 @@
 
 .fun-cube {
   background-color: rgb(80, 80, 80);
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 #fun-cubes-container:hover {
-  grid-gap: 12px;
-  height: 80px;
-  width: 80px;
-  left: 22px;
-  top: 22px;
+  grid-gap: 10px;
+  height: 60px;
+  width: 60px;
+  left: 92px;
+  top: 32px;
 }
 
 #box0 {
@@ -58,31 +58,15 @@
 
 @media (max-width: 1200px) {
   #fun-cubes-container {
-    height: 55px;
-    width: 55px;
+    height: 40px;
+    width: 40px;
     left: 30px;
     top: 30px;
   }
   #fun-cubes-container:hover {
     grid-gap: 7px;
-    height: 60px;
-    width: 60px;
-    left: 27px;
-    top: 27px;
-  }
-}
-
-@media (max-width: 1000px) {
-  #fun-cubes-container {
     height: 50px;
     width: 50px;
-    left: 30px;
-    top: 30px;
-  }
-  #fun-cubes-container:hover {
-    grid-gap: 5px;
-    height: 55px;
-    width: 55px;
     left: 27px;
     top: 27px;
   }

@@ -1,17 +1,298 @@
 #hamburger-container {
-  height: 60px;
-  width: 60px;
+  height: 55px;
+  width: 55px;
   position: absolute;
-  right: 30px;
-  top: 30px;
+  right: 100px;
+  top: 15px;
   z-index: 15;
-  /* display: none; */
-  /* grid-template-areas:
-  "box0 box1 box2"
-  "box3 box4 box5"
-  "box6 box7 box8";
-  grid-gap: 2px; */
+  display: none;
   cursor: pointer;
   transition: 0.15s ease-in-out;
-  background-color: khaki;
+  align-items: center;
+  justify-items: center;
+}
+
+.hamburger {
+  margin: 1em;
+  width: 100%;
+}
+
+.hamburger:after, 
+.hamburger:before, 
+.hamburger div {
+  background-color: rgb(80, 80, 80);
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 3px;
+  margin: 10px 0;
+  transition: all .2s ease-in-out;
+}
+
+.hamburger-first-form:hover:before {
+  transform: translateY(-8px);
+}
+
+.hamburger-first-form:hover:after {
+  transform: translateY(8px);
+}
+
+
+/*  */
+.hamburger-second-form-trigger:before {
+  animation-name: hamburger-second-form-before-trigger;
+  animation-duration: 0.7s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+} 
+
+@keyframes hamburger-second-form-before-trigger {
+  0% {
+    transform: scaleX(1) translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: scaleX(1.5) translateY(13px) rotate(125deg);
+  }
+  70% {
+    transform: scaleX(1.5) translateY(13px) rotate(200deg);
+  }
+}
+
+.hamburger-second-form-trigger:after {
+  animation-name: hamburger-second-form-after-trigger;
+  animation-duration: 0.7s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hamburger-second-form-after-trigger {
+  0% {
+    transform: scaleX(1) translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: scaleX(1.5) translateY(-13px) rotate(235deg);
+  }
+  70% {
+    transform: scaleX(1.5) translateY(-13px) rotate(360deg);
+  }
+}
+
+.hamburger-second-form-trigger div {
+  transform: scale(0);
+}
+
+/*  */
+.hamburger-second-form:before {
+  transform: scaleX(1.5) translateY(13px) rotate(125deg);
+}
+
+.hamburger-second-form:after {
+  transform: scaleX(1.5) translateY(-13px) rotate(235deg);
+}
+
+.hamburger-second-form div {
+  transform: scale(0);
+}
+
+
+/*  */
+.hamburger-second-form-hover:hover:before {
+  animation-name: hamburger-second-form-before-hover;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hamburger-second-form-before-hover {
+  from {
+    transform: scaleX(1.5) translateY(13px) rotate(125deg);
+  }
+  to {
+    transform: scaleX(1.5) translateY(13px) rotate(135deg);
+  }
+}
+
+.hamburger-second-form-hover:hover:after {
+  animation-name: hamburger-second-form-after-hover;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hamburger-second-form-after-hover {
+  from {
+    transform: scaleX(1.5) translateY(-13px) rotate(235deg);
+  }
+  to {
+    transform: scaleX(1.5) translateY(-13px) rotate(225deg);
+  }
+}
+
+
+/*  */
+.hamburger-first-form-trigger:before {
+  animation-name: hamburger-first-form-before-trigger;
+  animation-duration: 0.7s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+} 
+
+@keyframes hamburger-first-form-before-trigger {
+  0% {
+    transform: scaleX(1.5) translateY(13px) rotate(125deg);
+  }
+  100% {
+    transform: scaleX(1) translateY(0) rotate(0deg);
+  }
+  70% {
+    transform: scaleX(1.5) translateY(13px) rotate(-60deg);
+  }
+}
+
+.hamburger-first-form-trigger:after {
+  animation-name: hamburger-first-form-after-trigger;
+  animation-duration: 0.7s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hamburger-first-form-after-trigger {
+  0% {
+    transform: scaleX(1.5) translateY(-13px) rotate(235deg);
+  }
+  100% {
+    transform: scaleX(1) translateY(0) rotate(0deg);
+  }
+  70% {
+    transform: scaleX(1.5) translateY(-13px) rotate(-20deg);
+  }
+}
+
+.hamburger-first-form-trigger div {
+  animation-name: hamburger-first-form-div-trigger;
+  animation-duration: 0.7s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hamburger-first-form-div-trigger {
+  0%, 80% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@media (max-width: 1200px) {
+  #hamburger-container {
+    height: 45px;
+    width: 45px;
+    right: 30px;
+    top: 10px;
+  }
+}
+
+@media (max-width: 550px) {
+  .hamburger:after, 
+  .hamburger:before, 
+  .hamburger div {
+    margin: 5px 0;
+  }
+
+  #hamburger-container {
+    height: 20px;
+    width: 30px;
+    right: 20px;
+    top: 7px;
+  }
+
+  .hamburger-first-form:hover:before {
+    transform: translateY(-4px);
+  }
+  
+  .hamburger-first-form:hover:after {
+    transform: translateY(4px);
+  }
+
+  @keyframes hamburger-second-form-before-trigger {
+    0% {
+      transform: scaleX(1) translateY(0) rotate(0deg);
+    }
+    100% {
+      transform: scaleX(1.5) translateY(8px) rotate(125deg);
+    }
+    70% {
+      transform: scaleX(1.5) translateY(8px) rotate(200deg);
+    }
+  }
+  
+  @keyframes hamburger-second-form-after-trigger {
+    0% {
+      transform: scaleX(1) translateY(0) rotate(0deg);
+    }
+    100% {
+      transform: scaleX(1.5) translateY(-8px) rotate(235deg);
+    }
+    70% {
+      transform: scaleX(1.5) translateY(-8px) rotate(360deg);
+    }
+  }
+
+  /*  */
+  .hamburger-second-form:before {
+    transform: scaleX(1.5) translateY(8px) rotate(125deg);
+  }
+  
+  .hamburger-second-form:after {
+    transform: scaleX(1.5) translateY(-8px) rotate(235deg);
+  }
+  
+  
+  /*  */
+  @keyframes hamburger-second-form-before-hover {
+    from {
+      transform: scaleX(1.5) translateY(8px) rotate(125deg);
+    }
+    to {
+      transform: scaleX(1.5) translateY(8px) rotate(135deg);
+    }
+  }
+  
+  @keyframes hamburger-second-form-after-hover {
+    from {
+      transform: scaleX(1.5) translateY(-8px) rotate(235deg);
+    }
+    to {
+      transform: scaleX(1.5) translateY(-8px) rotate(225deg);
+    }
+  }
+  
+  
+  /*  */
+  
+  @keyframes hamburger-first-form-before-trigger {
+    0% {
+      transform: scaleX(1.5) translateY(8px) rotate(125deg);
+    }
+    100% {
+      transform: scaleX(1) translateY(0) rotate(0deg);
+    }
+    70% {
+      transform: scaleX(1.5) translateY(8px) rotate(-60deg);
+    }
+  }
+  
+  @keyframes hamburger-first-form-after-trigger {
+    0% {
+      transform: scaleX(1.5) translateY(-8px) rotate(235deg);
+    }
+    100% {
+      transform: scaleX(1) translateY(0) rotate(0deg);
+    }
+    70% {
+      transform: scaleX(1.5) translateY(-8px) rotate(-20deg);
+    }
+  }
 }
