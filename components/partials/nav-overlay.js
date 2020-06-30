@@ -29,17 +29,17 @@ export default class NavOverlay extends React.Component {
         <div id="nav-overlay-wrapper">
           <div className="cards-container">
             <Link href="/">
-              <div onClick={this.hideNavOverlay} className="nav-item-container grey-text text-lighten-2 text-highlight">
+              <div id="nav-item-1" onClick={this.hideNavOverlay} className="nav-item-container grey-text text-lighten-2 text-highlight">
                 <h3>about</h3>
               </div>
             </Link>
             <Link href="/portfolio">
-              <div onClick={this.hideNavOverlay} className="nav-item-container grey-text text-lighten-2 text-highlight-reverse">
+              <div id="nav-item-2" onClick={this.hideNavOverlay} className="nav-item-container grey-text text-lighten-2 text-highlight-reverse">
                 <h3>portfolio</h3>
               </div>
             </Link>
             <Link href="/contact">
-              <div onClick={this.hideNavOverlay} className="nav-item-container grey-text text-lighten-2 text-highlight">
+              <div id="nav-item-3" onClick={this.hideNavOverlay} className="nav-item-container grey-text text-lighten-2 text-highlight">
                 <h3>contact</h3>
               </div>
             </Link>
