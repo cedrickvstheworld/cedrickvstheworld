@@ -1,11 +1,71 @@
 #nav-overlay-container {
   width: 100%;
   height: 100vh;
-  background-color: rgba(17, 17, 17, 0.089);
+  background-color: #1d1d1d;
+  opacity: 1 !important;
   position: absolute;
   z-index: 12;
-  /* display: grid; */
   display: none;
   align-items: center;
   justify-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+#nav-overlay-wrapper {
+  width: 600px;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.cards-container {
+  width: 100%;
+}
+
+.nav-item-container {
+  width: 100%;
+  height: 200px;
+  background-color: #1a1a1a;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav-item-container h3 {
+  font-size: 3em !important;
+  user-select: none;
+}
+
+@media (max-width: 600px) {
+  #nav-overlay-wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .nav-item-container {
+    height: 150px;
+  }
+}
+
+@media (max-height: 650px) {
+  .nav-item-container {
+    height: 150px;
+  }
+}
+
+@media (max-height: 450px) {
+  .nav-item-container {
+    height: 100px;
+  }
+
+  .nav-item-container h3 {
+    font-size: 2em !important;
+  }
 }

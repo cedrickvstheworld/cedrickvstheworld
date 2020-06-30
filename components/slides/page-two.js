@@ -62,9 +62,6 @@ export default class PageTwo extends React.Component {
   async viewProject(projectInfo) {
     await this.setState(projectInfo);
     await this.setState({projectViewer: true});
-    const projectViewer = document.getElementById("project-viewer")
-    projectViewer.style.display = 'block';
-    projectViewer.scrollTop = 0;
     this.navButtons.hide();
   }
 

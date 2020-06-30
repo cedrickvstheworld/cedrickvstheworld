@@ -17,8 +17,7 @@ export default withNavigationContext(() => {
   return (
     <Slider
       startupScreen={<Preload />}
-      // startupDelay={2300}
-      startupDelay={100}
+      startupDelay={2300}
       className="awesome-slider"
       animation="foldOutAnimation"
       onTransitionEnd={() => {

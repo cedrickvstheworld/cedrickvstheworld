@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Provider } from "react-awesome-slider/dist/navigation";
 import { useRouter } from "next/router";
-import Nav from '../components/partials/nav-overlay';
+import NavOverlay from '../components/partials/nav-overlay';
 import Hamburger from '../components/partials/hamburger';
 
 // Styles
@@ -35,7 +35,7 @@ function App({ Component, pageProps }) {
         <meta key="theme-color" name="theme-color" content="#1a1a1a" />
       </Head>
       <Hamburger />
-      <Nav />
+      <NavOverlay />
       <Component {...pageProps} />
     </Provider>
   );

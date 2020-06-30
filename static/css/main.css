@@ -59,6 +59,19 @@ h1, h2, h3, h4 {
   color: #e0e0e0 !important;
 }
 
+.text-highlight-reverse {
+  background-image: linear-gradient(to right, rgb(59, 59, 59)  50%, transparent 50%);
+  transition: background-color 0.2s linear;
+  background-position: -100%;
+  background-size: 200%;
+  transition: all 0.2s;
+}
+
+.text-highlight-reverse:hover {
+  background-position: 0;
+  color: #e0e0e0 !important;
+}
+
 .clickable {
   cursor: pointer;
 }

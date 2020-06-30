@@ -22,21 +22,16 @@ export default class ProjectViewer extends React.Component {
     this.cloak = new Cloak();
   }
 
-  componentWillUnmount() {
-  }
-
   UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({projectData: nextProps.projectData})
     return false;  
   }
-
 
   returnToParent() {
     const projectViewer = document.getElementById('project-viewer');
     projectViewer.classList.add('animate__fadeOutUp');
     const hideToDisplay = setTimeout(() => {
       projectViewer.classList.remove('animate__fadeOutUp');
-      projectViewer.style.display = 'none';
       clearTimeout(hideToDisplay);
     }, 500);
     new funCubes(document).hide();
@@ -87,7 +82,7 @@ export default class ProjectViewer extends React.Component {
 
     return (
       <div>
-        <div onClick={this.returnToParent}>
+        <div id="fc-wrapper" onClick={this.returnToParent}>
           <FunCubes />
         </div>
         <div onScroll={this.scrollEvent} className="animate__animated animate__fadeInDown animate__faster" id="project-viewer">
