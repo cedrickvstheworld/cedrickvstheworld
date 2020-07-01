@@ -340,10 +340,14 @@ export const PROJECT_INFO = [
 ];
 
 
-export const PAGE_TWO_PRELOADS = [];
-for (let i in PROJECT_INFO) {
-  const project = PROJECT_INFO[i];
-  for (let ii in project.previews) {
-    PAGE_TWO_PRELOADS.push(project.previews[ii]);
-  }
-};
+export const PAGE_TWO_PRELOADS = [
+  '/portfolio/kyoo/09.png',
+  '/portfolio/kyoo-automotive/01.png',
+  '/portfolio/docker-swarm-logger/01.png',
+  '/portfolio/ems-project/02.png',
+  '/portfolio/ytmpee3/01.png',
+  '/portfolio/memo/03.png',
+  '/portfolio/account-management-boiler-plate/01.jpg',
+  '/portfolio/cctti/02.png',
+  '/portfolio/academia/02.png'
+];
