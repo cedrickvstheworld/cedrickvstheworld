@@ -184,6 +184,10 @@
     padding-right: 0;
     padding-bottom: 40px;
   }
+  
+  .image-preview-container {
+    height: 280px;
+  }
 
   #project-preview-heading-container,
   #project-description-container,
