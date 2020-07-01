@@ -2,7 +2,6 @@ import React from 'react';
 import Slider from './preview-slider';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faExternalLinkAlt} from '@fortawesome/free-solid-svg-icons';
-import Footer from '../partials/footer';
 import {Cloak, funCubes, navigationButtons} from '../../static/js/helpers';
 import FunCubes from './fun-cubes';
 
@@ -127,7 +126,6 @@ export default class ProjectViewer extends React.Component {
               </ul>
             </div>
           </div>
-          <Footer />
         </div>
       </div>
     );
