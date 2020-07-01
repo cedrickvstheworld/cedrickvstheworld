@@ -10,7 +10,7 @@
 #preload-branding {
   z-index: 1;
   font-family: 'Press Start 2P', sans-serif;
-  margin-top: 320px;
+  margin-top: 310px;
   font-size: 14px !important;
 }
 
@@ -29,17 +29,17 @@
 
 #cog-container-1 {
   margin-right: -110px;
-  margin-top: -60px;
+  margin-top: -100px;
 }
 
 #cog-container-2 {
-  margin-top: 155px;
+  margin-top: 125px;
   margin-right: 15px;
   transform: rotate(30deg);
 }
 
 #cog-container-3 {
-  margin-top: 56px;
+  margin-top: 26px;
   margin-right: 175px;
   transform: rotate(04deg);
 }
@@ -89,17 +89,17 @@
 @media (max-width: 600px) {
   #cog-container-1 {
     margin-right: -105px;
-    margin-top: -100px;
+    margin-top: -140px;
   }
   
   #cog-container-2 {
-    margin-top: 98px;
+    margin-top: 58px;
     margin-right: 20px;
     transform: rotate(35deg);
   }
   
   #cog-container-3 {
-    margin-top: -5px;
+    margin-top: -45px;
     margin-right: 160px;
     transform: rotate(10deg);
   }
@@ -108,6 +108,6 @@
     z-index: 1;
     font-family: 'Press Start 2P', sans-serif;
     margin-top: 280px;
-    font-size: 14px !important;
+    font-size: 12px !important;
   }
 }
