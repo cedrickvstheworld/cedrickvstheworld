@@ -78,7 +78,11 @@
   animation-duration: 2.5s;
   animation-timing-function: ease;
   animation-delay: 0.7s;
-  transform-origin: 50% 50% !important;
+  transform-origin: center center !important;
+  -moz-transform-origin: center center !important;
+  -webkit-transform-origin: center center !important;
+  -ms-transform-origin: center center !important;
+  -o-transform-origin: center center !important;
 }
 
 @keyframes bounce-in {
