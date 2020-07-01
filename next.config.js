@@ -2,6 +2,7 @@ const withCSS = require('@zeit/next-css')
 module.exports = {
   ...withCSS(),
   env: {
-    SENDGRID_API_KEY: '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',
+    EMAILJS_USER_ID: 'user_nfpqNRqsHa2fJLnp75Y2O',
+    EMAILJS_TEMPLATE_ID: 'template_9xRrWv3T'
   },
 }

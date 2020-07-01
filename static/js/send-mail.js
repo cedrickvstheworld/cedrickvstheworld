@@ -1,31 +1,12 @@
-  import axios from 'axios';
+const sgMail = require('@sendgrid/mail')
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
-  export default function sendMail(senderName, senderEmail, content) {
-    return axios.post(
-      'https://api.sendgrid.com/v3/mail/send',
-      {
-        "personalizations": [
-          {
-            "to": [
-              {
-                "email": "cedrickdomingo57@gmail.com"
-              }
-            ],
-            "subject": "Somebody Mailed Me"
-          }
-        ],
-        "from": {
-          "email": "cedrickdomingo57@gmail.com"
-        },
-        "content": [
-          {
-            "type": "text/plain",
-            "value": `name: ${senderName}\nemail: ${senderEmail}\n${content}`
-          }
-        ]
-      },
-      {
-        headers: { Authorization: `Bearer ${process.env.SENDGRID_API_KEY}` }
-      }
-    )
-  }
+
+export default function sendMail(senderName, senderEmail, content) {
+  return sgMail.send({
+    from: 'Dudeson',
+    to: 'cedrickdomingo048@gmail.com',
+    subject: 'Somebody Sent me a Mail',
+    html: `<b>Name:</b> ${senderName}\n<b>Email:</b> ${senderEmail}\n<p>${content}</p>`
+  });
+}

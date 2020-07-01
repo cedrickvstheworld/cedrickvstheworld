@@ -5,7 +5,6 @@ import {faGithub, faFacebook, faSkype, faLinkedin} from '@fortawesome/free-brand
 import {github_profile, facebook_profile, skype_profile, linked_in} from '../../contents/links';
 import Footer from '../partials/footer';
 import {inputWarning, Key} from '../../static/js/helpers';
-import sendMail from '../../static/js/send-mail';
 
 export default class Contact extends React.Component {
   constructor() {
@@ -16,7 +15,8 @@ export default class Contact extends React.Component {
           message: '',
           nameLabel: '',
           emailLabel: '',
-          textareaLabel: ''
+          textareaLabel: '',
+          btnLabel: 'Send'
       }
       this.fetchFieldValue = this.fetchFieldValue.bind(this);
       this.submit = this.submit.bind(this);
@@ -81,19 +81,31 @@ export default class Contact extends React.Component {
     return true;
   }
 
-  submit() {
+  async submit() {
+    const btn = document.getElementById('send-mail');
     const testForm = this.validateForm();
     if (!testForm) {
       return false;
     }
-    // using sendgrid to send email
-    sendMail(this.state.name, this.state.email, this.state.message)
-    .then(() => {
-      console.log('sent');
-    })
-    .catch(() => {
-      console.log('failed');
-    })
+    await this.setState({btnLabel: 'SENDING'})
+    btn.classList.add('btn-disable');
+    // send email
+    window.emailjs.init(`${process.env.EMAILJS_USER_ID}`)
+    const templateParams = {
+      name: this.state.name,
+      email: this.state.email,
+      content: this.state.message
+    };
+    await emailjs.send('gmail', `${process.env.EMAILJS_TEMPLATE_ID}`, templateParams)
+    .then(async () => {
+      await this.setState({btnLabel: 'Your message was sent!'})
+      await new Promise(r => setTimeout(r, 2500));
+    }, async () => {
+      await this.setState({btnLabel: 'Sending Failed :('})
+      await new Promise(r => setTimeout(r, 2500));
+    });
+    btn.classList.remove('btn-disable');
+    this.setState({btnLabel: 'Send Again'})
   }
 
   render() {
@@ -118,9 +130,9 @@ export default class Contact extends React.Component {
                 name="message" onChange={this.fetchFieldValue} value={this.state.message}></textarea>
               </div>
               <div className="contact-form-footer">
-                <button onClick={this.submit} className="waves-effect waves-light btn btn-large">
+                <button id="send-mail" onClick={this.submit} className="waves-effect waves-light btn btn-large">
                   <FontAwesomeIcon icon={faPaperPlane} />&nbsp;
-                  Send
+                  {this.state.btnLabel}
                 </button>
               </div>
             </div>
