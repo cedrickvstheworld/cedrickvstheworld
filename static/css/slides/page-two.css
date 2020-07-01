@@ -83,7 +83,7 @@
   bottom: 100%;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.632);
+  background-color: rgba(0, 0, 0, 0.732);
   overflow: hidden;
   width: 100%;
   height: 0;
@@ -128,19 +128,39 @@
 
 
 #project-card-image-container-0 {
-  background-image: url('https://images.pexels.com/photos/4273439/pexels-photo-4273439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-image: url('/portfolio/kyoo/09.png');
 }
 
 #project-card-image-container-1 {
-  background-image: url('https://images.pexels.com/photos/4348226/pexels-photo-4348226.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-image: url('/portfolio/kyoo-automotive/01.png');
 }
 
 #project-card-image-container-2 {
-  background-image: url('https://images.pexels.com/photos/3689772/pexels-photo-3689772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-image: url('/portfolio/docker-swarm-logger/01.png');
 }
 
 #project-card-image-container-3 {
-  background-image: url('https://images.pexels.com/photos/1713953/pexels-photo-1713953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-image: url('/portfolio/ems-project/02.png');
+}
+
+#project-card-image-container-4 {
+  background-image: url('/portfolio/ytmpee3/01.png');
+}
+
+#project-card-image-container-5 {
+  background-image: url('/portfolio/memo/03.png');
+}
+
+#project-card-image-container-6 {
+  background-image: url('/portfolio/account-management-boiler-plate/01.jpg');
+}
+
+#project-card-image-container-7 {
+  background-image: url('/portfolio/cctti/02.png');
+}
+
+#project-card-image-container-8 {
+  background-image: url('/portfolio/academia/02.png');
 }
 
 @media (max-width: 1200px) {

@@ -63,20 +63,20 @@ export default class ProjectViewer extends React.Component {
       )
     }
     const webLink = project.websiteLink ? (
-      <a href="" className="waves-effect waves-light btn web-link-btn">
+      <a href={project.websiteLink} rel="noopener noreferrer" target="_blank" className="waves-effect waves-light btn web-link-btn">
         <FontAwesomeIcon icon={faExternalLinkAlt} />&nbsp;
         Visit Website
       </a>
     ) : ''
     const webLinkAlt = project.websiteLink ? (
-      <a href="" className="light-blue-text text-darken-3 web-link-alt">
+      <a href={project.websiteLink} rel="noopener noreferrer" target="_blank" className="light-blue-text text-darken-3 web-link-alt">
         <FontAwesomeIcon icon={faExternalLinkAlt} />&nbsp;
         Visit Website
       </a>
     ) : ''
     const repository = project.repository ? (
       <div className="grey-text text-darken-3" id="remote-repository-container">
-        <h6 className="description"><b>Remote&nbsp;Repository:</b> <a className="light-blue-text text-darken-3 text-highlight" href={project.repository}>{project.repository}</a></h6>
+        <h6 className="description"><b>Remote&nbsp;Repository:</b> <a className="light-blue-text text-darken-3 text-highlight" href={project.repository} rel="noopener noreferrer" target="_blank" >{project.repository}</a></h6>
       </div>
     ) : ''
 
@@ -90,11 +90,11 @@ export default class ProjectViewer extends React.Component {
             <div id="project-preview-heading-container">
               <h4 id="project-viewer-heading" className="grey-text text-darken-3">{project.title}</h4>
               <div className="row no-margin">
-                <div className="col l6 m6 s12 no-margin">
+                <div className="col l8 m8 s12 no-margin">
                   <p className="little-text grey-text text-darken-2">{project.healthText}</p>
                   {webLinkAlt}
                 </div>
-                <div className="col l6 m6 s12 no-margin right-align">
+                <div className="col l4 m4 s12 no-margin right-align">
                   {webLink}
                 </div>
               </div>

@@ -1,13 +1,23 @@
 import AwesomeSlider from 'react-awesome-slider';
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
+const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 const slider = (props) => {
+  let previews = [];
+  for (let i in props.previews) {
+    previews.push(
+      <div key={i} data-src={props.previews[i]} />
+    );
+  }
   return (
-    <AwesomeSlider
+    <AutoplaySlider
+      play={true}
+      cancelOnInteraction={true}
+      interval={5000}
       className="image-preview-container"
       animation="openAnimation">
-      <div data-src="https://images.pexels.com/photos/4273439/pexels-photo-4273439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-      <div data-src="https://images.pexels.com/photos/4348226/pexels-photo-4348226.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-    </AwesomeSlider>
+      {previews}
+    </AutoplaySlider>
   );
 }
 

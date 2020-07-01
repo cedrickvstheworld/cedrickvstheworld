@@ -1,7 +1,7 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPaperPlane} from '@fortawesome/free-solid-svg-icons';
-import {faGithub, faFacebook, faSkype, faLinkedin} from '@fortawesome/free-brands-svg-icons';
+import {faGithub, faFacebook, faSkype, faLinkedin, faGoogle} from '@fortawesome/free-brands-svg-icons';
 import {github_profile, facebook_profile, skype_profile, linked_in} from '../../contents/links';
 import Footer from '../partials/footer';
 import {inputWarning, Key} from '../../static/js/helpers';
@@ -113,10 +113,12 @@ export default class Contact extends React.Component {
       <div id="contact-page-wrapper" className="container grey-text text-lighten-2">
         <div className="row">
           <div className="col s12 m10 l10 contact-form-container">
-            <header className="contact-header">
+            <div className="contact-header">
               <h3>Ping Me</h3>
-              <p className="grey-text text-darken-1 description">Veniam minim aliqua laboris irure veniam sunt tempor officia eiusmod qui fugiat.</p>
-            </header>
+              <p className="grey-text text-darken-1 description">
+                Fill up the form below to send a message to my personal gmail account: <span className="teal-text text-lighten-2 text-highlight">cedrickdomingo048@gmail.com.</span> You can also get in touch to me through the following platform links that I provided.
+              </p>
+            </div>
             <div className="contact-form">
               <div className="message-content">
                 

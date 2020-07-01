@@ -45,7 +45,7 @@ export default class PageTwo extends React.Component {
             <div onClick={this.viewProject.bind(this, PROJECT_INFO[data._id])} className="project-card-image-overlay">
               <div className="project-overlay-container">
                 <div className="animate__animated animate__bounceInDown overlay-desc-container">
-                  <h6 className="grey-text text-lighten-4 overlay-desc">{data.description}</h6>
+                  <h6 className="grey-text text-lighten-3 overlay-desc description">{data.description}</h6>
                 </div>
                 <div className="project-read-more">
                   <h6 className="animate__animated animate__headShake  animate__delay-3s light-blue-text clickable" 
@@ -93,10 +93,12 @@ export default class PageTwo extends React.Component {
               <header className="portfolio-header">
                 <div>
                   <h3>Portfolio</h3>
-                  <p className="description">Adipisicing aliqua irure excepteur ea in do. Cillum fugiat consequat sint deserunt non officia aliquip est quis aute dolore. Nisi dolor ut aute nostrud tempor incididunt officia ut anim ipsum minim irure veniam non.</p>
+                  <p className="description">These are the projects that I made or have been working with in my software development career. 
+                  They could give you an overview about the skill set I have and what I am capable of.</p>
                 </div>
                 <div>
-                  <p className="grey-text text-darken-1">Anim nostrud do irure dolore dolor nostrud quis. dolore dolor nostrud quis.</p>
+                  <p className="grey-text text-darken-1">Some of them are corporate projects which I have collaborated with and some
+                  are individual projects that I was able to build in my spare time.</p>
                 </div>
               </header>
               <div id="projects-container" className="row">
