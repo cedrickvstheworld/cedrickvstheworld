@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faExternalLinkAlt} from '@fortawesome/free-solid-svg-icons';
 import {Cloak, funCubes, navigationButtons} from '../../static/js/helpers';
 import FunCubes from './fun-cubes';
+import Footer from './footer';
 
 export default class ProjectViewer extends React.Component {
   constructor(props) {
@@ -126,6 +127,7 @@ export default class ProjectViewer extends React.Component {
               </ul>
             </div>
           </div>
+          <Footer />
         </div>
       </div>
     );
