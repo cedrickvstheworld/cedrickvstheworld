@@ -143,7 +143,7 @@
   }
   
   .image-preview-container {
-    height: 250px;
+    height: 300px;
   }
 
   .p-close, .p-minimize, .p-maximize {
@@ -168,7 +168,7 @@
 
 @media (max-width: 550px) {
   #project-viewer-container {
-    padding-top: 90px;
+    padding-top: 120px;
   }
 
 

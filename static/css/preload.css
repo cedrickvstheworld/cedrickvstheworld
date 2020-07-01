@@ -89,17 +89,17 @@
 @media (max-width: 600px) {
   #cog-container-1 {
     margin-right: -105px;
-    margin-top: -170px;
+    margin-top: -190px;
   }
   
   #cog-container-2 {
-    margin-top: 18px;
+    margin-top: -2px;
     margin-right: 20px;
     transform: rotate(35deg);
   }
   
   #cog-container-3 {
-    margin-top: -85px;
+    margin-top: -105px;
     margin-right: 160px;
     transform: rotate(10deg);
   }
@@ -107,7 +107,7 @@
   #preload-branding {
     z-index: 1;
     font-family: 'Press Start 2P', sans-serif;
-    margin-top: 220px;
+    margin-top: 190px;
     font-size: 12px !important;
   }
 }
