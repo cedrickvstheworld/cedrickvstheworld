@@ -142,17 +142,17 @@ export default class Contact extends React.Component {
               <div className="container">
                 <div className="contact-link-container">
                   <a href={github_profile} rel="noopener noreferrer" target="_blank">
-                    <FontAwesomeIcon className="grey-text text-darken-1 contact-link"  id="contact-link-0" icon={faGithub}  size="3x"/>
+                    <FontAwesomeIcon className="grey-text text-darken-1 contact-link"  id="contact-link-0" icon={faGithub}  size="3x" />
                   </a>
                 </div>
                 <div className="contact-link-container">
                   <a href={linked_in} rel="noopener noreferrer" target="_blank">
-                    <FontAwesomeIcon className="grey-text text-darken-1 contact-link" id="contact-link-1" icon={faLinkedin}  size="3x"/>
+                    <FontAwesomeIcon className="grey-text text-darken-1 contact-link" id="contact-link-1" icon={faLinkedin}  size="3x" />
                   </a>
                 </div>
                 <div className="contact-link-container">
                   <a href={facebook_profile} rel="noopener noreferrer" target="_blank">
-                    <FontAwesomeIcon className="grey-text text-darken-1 contact-link" id="contact-link-2" icon={faFacebook}  size="3x"/>
+                    <FontAwesomeIcon className="grey-text text-darken-1 contact-link" id="contact-link-2" icon={faFacebook}  size="3x" />
                   </a>
                 </div>
                 <div className="contact-link-container">

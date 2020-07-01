@@ -31,9 +31,11 @@ function App({ Component, pageProps }) {
   return (
     <Provider slug={router.route}>
       <Head>
+        <link rel="shortcut icon" type="image/png" href="/favicon.png" />
         <title>cedrick vs the world</title>
         <meta key="theme-color" name="theme-color" content="#1a1a1a" />
         <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+        <link href="/svg-with-js.css" rel="stylesheet"></link>
       </Head>
       <Hamburger />
       <NavOverlay />
