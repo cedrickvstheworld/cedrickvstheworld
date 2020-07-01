@@ -168,7 +168,7 @@
 
 @media (max-width: 550px) {
   #project-viewer-container {
-    padding-top: 120px;
+    padding-top: 70px;
   }
 
 
@@ -183,10 +183,6 @@
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 40px;
-  }
-
-  .image-preview-container {
-    height: 200px;
   }
 
   #project-preview-heading-container,
