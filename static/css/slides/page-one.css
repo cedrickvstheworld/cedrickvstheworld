@@ -78,7 +78,7 @@
   animation-duration: 2.5s;
   animation-timing-function: ease;
   animation-delay: 0.7s;
-
+  transform-origin: 50% 50% !important;
 }
 
 @keyframes bounce-in {
