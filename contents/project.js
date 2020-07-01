@@ -316,7 +316,6 @@ export const PROJECT_INFO = [
     healthText: 'Individual Project',
     type: 'Individual Project',
     previews: [
-      '/portfolio/academia/01.png',
       '/portfolio/academia/02.png',
       '/portfolio/academia/03.png',
       '/portfolio/academia/04.png',
@@ -345,9 +344,13 @@ export const PAGE_TWO_PRELOADS = [
   '/portfolio/kyoo-automotive/01.png',
   '/portfolio/docker-swarm-logger/01.png',
   '/portfolio/ems-project/02.png',
+  '/portfolio/ems-project/01.png',
+  '/portfolio/ytmpee3/01.jpg',
   '/portfolio/ytmpee3/01.png',
+  '/portfolio/memo/01.png',
   '/portfolio/memo/03.png',
   '/portfolio/account-management-boiler-plate/01.jpg',
+  '/portfolio/cctti/01.png',
   '/portfolio/cctti/02.png',
   '/portfolio/academia/02.png'
 ];

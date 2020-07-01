@@ -93,7 +93,7 @@ export default class PageTwo extends React.Component {
               <header className="portfolio-header">
                 <div>
                   <h3>Portfolio</h3>
-                  <p className="description">These are the projects that I made or have been working with in my career as a software developer. 
+                  <p className="description">These are the projects that I made, have worked with a team, or have been working with in my career as a software developer. 
                   They could give you an overview about the skill set I have and what I am capable of.</p>
                 </div>
                 <div>
