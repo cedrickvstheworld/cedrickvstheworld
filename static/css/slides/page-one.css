@@ -71,18 +71,13 @@
 }
 
 #o {
-  margin-left: -1.8em;
-  /* margin-left: 1.749em; */
-  animation-name: roll-in-left;
+  margin-top: -3em;
+  margin-left: 1.749em;
+  animation-name: bounce-in;
   animation-fill-mode: forwards;
-  animation-duration: 2.5s;
+  animation-duration: 1.2s;
   animation-timing-function: ease;
-  animation-delay: 0.7s;
-  transform-origin: center center !important;
-  -moz-transform-origin: center center !important;
-  -webkit-transform-origin: center center !important;
-  -ms-transform-origin: center center !important;
-  -o-transform-origin: center center !important;
+  animation-delay: 0.4s;
 }
 
 @keyframes bounce-in {
