@@ -160,7 +160,7 @@ export const PROJECT_INFO = [
       'Docker Machine',
       'Flask'
     ],
-    repository: 'https://github.com/cedie712/docker-swarm-centralized-logging',
+    repository: 'https://github.com/cedrickvstheworld/docker-swarm-centralized-logging',
     websiteLink: ''
   },
   {
@@ -199,7 +199,7 @@ export const PROJECT_INFO = [
       'CSS',
       'Javascript'
     ],
-    repository: 'https://github.com/cedie712/EMS_Project',
+    repository: 'https://github.com/cedrickvstheworld/EMS_Project',
     websiteLink: 'https://emsproject.herokuapp.com/emswebext'
   },
   {
@@ -221,7 +221,7 @@ export const PROJECT_INFO = [
       'CSS',
       'Heroku'
     ],
-    repository: 'https://github.com/cedie712/youtube-video-to-mp3',
+    repository: 'https://github.com/cedrickvstheworld/youtube-video-to-mp3',
     websiteLink: 'https://ytmpee3.herokuapp.com/'
   },
   {
@@ -253,7 +253,7 @@ export const PROJECT_INFO = [
       'Google OAuth',
       'Passport'
     ],
-    repository: 'https://github.com/cedie712/NODEJS-EXPRESS-REACT-REDUX-memo',
+    repository: 'https://github.com/cedrickvstheworld/NODEJS-EXPRESS-REACT-REDUX-memo',
     websiteLink: 'https://memo101.herokuapp.com/'
   },
   {
@@ -280,7 +280,7 @@ export const PROJECT_INFO = [
       'MongoDB',
       'Mongoose'
     ],
-    repository: 'https://github.com/cedie712/account-management-node-js',
+    repository: 'https://github.com/cedrickvstheworld/account-management-node-js',
     websiteLink: ''
   },
   {
@@ -307,7 +307,7 @@ export const PROJECT_INFO = [
       'Javascript',
       'Heroku'
     ],
-    repository: 'https://github.com/cedie712/CCTTI_Web_App',
+    repository: 'https://github.com/cedrickvstheworld/CCTTI_Web_App',
     websiteLink: 'https://cctti.herokuapp.com/'
   },
   {
@@ -333,7 +333,7 @@ export const PROJECT_INFO = [
       'Heroku',
       'Twilo'
     ],
-    repository: 'https://github.com/cedie712/Academia',
+    repository: 'https://github.com/cedrickvstheworld/Academia',
     websiteLink: 'https://academiaproject.herokuapp.com/'
   }
 ];
