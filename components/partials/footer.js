@@ -29,7 +29,7 @@ export default function Footer() {
           </li>
         </ul>
       </div>
-      <div className="center center-align">
+      <div id="footer-container" className="center center-align">
         <p className="grey-text text-darken-1 gmail-line">
           <FontAwesomeIcon className="grey-text text-darken-1 footer-google-icon" icon={faGoogle}/>
           &nbsp;cedrickdomingo048@gmail.com
